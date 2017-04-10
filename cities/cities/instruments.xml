@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<instruments>
+    <type>
+      <name>Струнные</name>
+    <models>
+      <model>
+        <name>Скрипка</name>
+      </model>
+      <model>
+        <name>Виолончель</name>
+      </model>
+      <model>
+        <name>Контрабас</name>
+      </model>
+    </models>
+    </type>
+  <type>
+    <name>Духовые</name>
+      <models>
+      <model>
+        <name>Саксофон</name>
+      </model>
+      <model>
+        <name>Тромбон</name>
+      </model>
+      <model>
+        <name>Туба</name>
+      </model>
+    </models>
+  </type>
+
+</instruments>
