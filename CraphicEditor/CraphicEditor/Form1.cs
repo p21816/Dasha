@@ -17,6 +17,8 @@ namespace CraphicEditor
         Rectangle chosenRectangle = new Rectangle();
         Point mouseClick;
         int index = -1;
+        int indexOfElToDel = -1;
+        bool elToAdd = false;
 
         List<Rectangle> rect = new List<Rectangle>();
 
@@ -27,8 +29,6 @@ namespace CraphicEditor
             rect.Add(new Rectangle(50, 50, 100, 150));
             rect.Add(new Rectangle(160, 160, 50, 70));
         }
-
-
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
            mouseClick = e.Location;
@@ -36,6 +36,7 @@ namespace CraphicEditor
            {
               chosenRectangle = rect[isInside()];
               index = isInside();
+              indexOfElToDel = isInside();
            }
         }
 
@@ -85,11 +86,31 @@ namespace CraphicEditor
         }
 
         private void Form1_MouseUp(object sender, MouseEventArgs e)
+        { 
+             index = -1;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            if(index != -1)
+            p.Color = Color.Green;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (indexOfElToDel != -1)
             {
-                index = -1;
+                rect.RemoveAt(indexOfElToDel);
+                this.Invalidate();
+                this.Update();
+                indexOfElToDel = -1;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            rect.Add(new Rectangle(10, 10, 20, 20));
+            this.Invalidate();
+            this.Update();
         }
     }
 }
