@@ -9,6 +9,8 @@ namespace MoveEllipses
 {
     abstract public class Shape
     {
+        public Pen p = new Pen(Color.Black);
+        public Brush b = new SolidBrush(Color.LawnGreen);
         private static int counter = 0;
         public readonly int id;
 
@@ -27,7 +29,7 @@ namespace MoveEllipses
         }
 
         public PointF position;
-        abstract public void Paint();
+        abstract public void Paint(Graphics g);
         abstract public bool isInside(PointF p);
         abstract public bool isOnBorder(PointF p);
 
@@ -40,5 +42,7 @@ namespace MoveEllipses
         {
             return String.Format("Shape #{0}", id);
         }
+        abstract public string ToSVG();
+
     }
 }
