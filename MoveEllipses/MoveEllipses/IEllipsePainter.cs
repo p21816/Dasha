@@ -8,7 +8,7 @@ namespace MoveEllipses
 {
     public interface IShapesPainter
     {
-         void DrawEllipse(Ellipse el);
-         void DrawRectangle(Rectangle r);
+        void DrawEllipse(Ellipse el, System.Drawing.Graphics g);
+        void DrawRectangle(Rectangle r, System.Drawing.Graphics g);
     }
 }
