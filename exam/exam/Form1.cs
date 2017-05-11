@@ -48,19 +48,18 @@ namespace exam
                 string cm2 = comboBox2.SelectedItem.ToString();
                 int indexCm1 = Convert.ToInt32(cm1);
                 int indexCm2 = Convert.ToInt32(cm2);
-
-                if (sumOfTransaction > m.accounts[indexCm1 - 1].sum)
+                int sumFrom = m.accounts[indexCm1 - 1].sum;
+                if (sumOfTransaction > sumFrom)
                 {
                     MessageBox.Show("На счете недостаточно средств");
                 }
-                else if(sumOfTransaction < 0)
+                else if (sumOfTransaction < 0)
                 {
-                    MessageBox.Show("Сумма должна быть положительной");
+                    MessageBox.Show("Сумма должна быть положительной!");
                 }
                 else
                 {
-                    m.accounts[indexCm1 - 1].sum = m.accounts[indexCm1 - 1].sum - sumOfTransaction;
-                    m.accounts[indexCm2 - 1].sum = m.accounts[indexCm2 - 1].sum + sumOfTransaction;
+                    m.makeTransaction(indexCm1, indexCm2, sumOfTransaction);
                     listBox1.Items.Clear();
                     foreach (BankAccount b in m.accounts)
                     {
@@ -73,6 +72,8 @@ namespace exam
                 MessageBox.Show("Вы ввели неверную сумму");
             }
             textBox5.Text = "";
+          }
+
         }
     }
-}
+
