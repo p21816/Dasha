@@ -21,7 +21,11 @@ namespace exam
             accounts.RemoveAt(index);
         }
 
-
+        public void makeTransaction(int from , int to , int sumOfTransaction)
+       {
+           accounts[from - 1].sum = accounts[from - 1].sum - sumOfTransaction;
+             accounts[to - 1].sum = accounts[to - 1].sum + sumOfTransaction;
+       }
 
 
     }
