@@ -3,14 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="550" Width="850">
     <DockPanel>
-        <StackPanel Width="150">
+        <StackPanel Width="150" Background="AliceBlue">
         <Button DockPanel.Dock="Left" Content="=)" Margin="10 10 10 10" Width="100" Height="25" Click="Button_Click"/>
-            <Button DockPanel.Dock="Left" Margin="10 10 10 10" Width="100" Height="25"/>
-            <Button DockPanel.Dock="Left" Margin="10 10 10 10" Width="100" Height="25"/>
+            <Button Content="Merry X-mas!" DockPanel.Dock="Left" Margin="10 10 10 10" Width="100" Height="25" Click="Button_Click_2"/>
+            <Button Content="Exit" DockPanel.Dock="Left" Margin="10 10 10 10" Width="100" Height="25" Click="Button_Click_1"/>
         </StackPanel>
-        <Rectangle DockPanel.Dock="Bottom" Height="200" Stroke="Black"></Rectangle>
-        <Grid>
+        <StackPanel DockPanel.Dock="Bottom" Height="200" Background="LightGray">
+            <Label x:Name="label1"></Label>
+        </StackPanel>
+        <Grid x:Name="gridForPics">
             <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
@@ -24,12 +27,32 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Name="Eye1" Visibility="Hidden" IsEnabled="False" Grid.Column="1" Grid.Row="1"></Button>
-            <Button Name="Eye2" Visibility="Hidden" IsEnabled="False" Grid.Column="4" Grid.Row="1"></Button>
+            <Button Content="x" Name="Eye1" Visibility="Hidden" IsEnabled="False" Grid.Column="2" Grid.Row="1"></Button>
+            <Button Content="x" Name="Eye2" Visibility="Hidden" IsEnabled="False" Grid.Column="5" Grid.Row="1"></Button>
+            <Button Content="x" Name="mouth1" Visibility="Hidden"  IsEnabled="False" Grid.Column="1" Grid.Row="3"></Button>
+            <Button Content="x" Name="mouth2" Visibility="Hidden"  IsEnabled="False" Grid.Column="2" Grid.Row="4"></Button>
+            <Button Content="x" Name="mouth3" Visibility="Hidden"  IsEnabled="False" Grid.Column="3" Grid.Row="4"></Button>
+            <Button Content="x" Name="mouth4" Visibility="Hidden"  IsEnabled="False" Grid.Column="4" Grid.Row="4"></Button>
+            <Button Content="x" Name="mouth5" Visibility="Hidden"  IsEnabled="False" Grid.Column="5" Grid.Row="4"></Button>
+            <Button Content="x" Name="mouth6" Visibility="Hidden"  IsEnabled="False" Grid.Column="6" Grid.Row="3"></Button>
+
+            <Button Content="x" Name="tree1" Visibility="Hidden"  IsEnabled="False" Grid.Column="3" Grid.Row="0"></Button>
+            <Button Content="x" Name="tree2" Visibility="Hidden"  IsEnabled="False" Grid.Column="3" Grid.Row="1"></Button>
+            <Button Content="x" Name="tree3"  Visibility="Hidden" IsEnabled="False" Grid.Column="2" Grid.Row="1"></Button>
+            <Button Content="x" Name="tree4"  Visibility="Hidden" IsEnabled="False" Grid.Column="4" Grid.Row="1"></Button>
+            <Button Content="x" Name="tree5" Visibility="Hidden"  IsEnabled="False" Grid.Column="3" Grid.Row="2"></Button>
+            <Button Content="x" Name="tree6" Visibility="Hidden"  IsEnabled="False" Grid.Column="3" Grid.Row="3"></Button>
+            <Button Content="x" Name="tree7" Visibility="Hidden"  IsEnabled="False" Grid.Column="2" Grid.Row="3"></Button>
+            <Button Content="x" Name="tree8" Visibility="Hidden"  IsEnabled="False" Grid.Column="4" Grid.Row="3"></Button>
+            <Button Content="x" Name="tree9" Visibility="Hidden"  IsEnabled="False" Grid.Column="5" Grid.Row="4"></Button>
+            <Button Content="x" Name="tree10" Visibility="Hidden"  IsEnabled="False" Grid.Column="4" Grid.Row="4"></Button>
+            <Button Content="x" Name="tree11" Visibility="Hidden"  IsEnabled="False" Grid.Column="3" Grid.Row="4"></Button>
+            <Button Content="x" Name="tree12" Visibility="Hidden"  IsEnabled="False" Grid.Column="2" Grid.Row="4"></Button>
+            <Button Content="x" Name="tree13" Visibility="Hidden"  IsEnabled="False" Grid.Column="1" Grid.Row="4"></Button>
+            <Button Content="x" Name="tree14" Visibility="Hidden"  IsEnabled="False" Grid.Column="3" Grid.Row="5"></Button>
         </Grid>
     </DockPanel>
-
-  
-
 </Window>
