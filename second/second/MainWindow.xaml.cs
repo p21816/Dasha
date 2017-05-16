@@ -20,12 +20,15 @@ namespace second
     /// </summary>
     public partial class MainWindow : Window
     {
+        byte red, green;
+
 
         private readonly bool initialized = false;
+       // byte red = 100, green = 100, blue = 100;
         public MainWindow()
         {
             InitializeComponent();
-            boxx.Fill = new SolidColorBrush(Colors.Black);
+            boxx.Fill = new SolidColorBrush(Color.FromRgb(100, 100 ,100));
             (new List<string>() {
             "aaa","bb","cc","dd","eee"
             }).ForEach(new Action<string>(x => listBox.Items.Add(x)));
@@ -103,8 +106,23 @@ namespace second
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (initialized)
-            boxx.Fill = new SolidColorBrush(Colors.Pink);
+            {
+                red = (byte)sldRed.Value;
+                boxx.Fill = new SolidColorBrush(Color.FromRgb(red, green, 100));
+            }
+
         }
+
+        private void sldGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (initialized)
+            {
+                green = (byte)sldGreen.Value;
+                boxx.Fill = new SolidColorBrush(Color.FromRgb(red, green, 100));
+            }
+
+        }
+
 
 
     }
