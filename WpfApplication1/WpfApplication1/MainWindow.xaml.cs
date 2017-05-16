@@ -23,6 +23,8 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
+            List<Button> bList = new List<Button>();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
