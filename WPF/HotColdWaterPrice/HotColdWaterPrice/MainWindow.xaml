@@ -1,0 +1,36 @@
+﻿<Window x:Class="HotColdWaterPrice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Label Content="Введите данные:"></Label>
+        <DockPanel HorizontalAlignment="Left" Width="150" Margin="5">
+            <Label  Content="Number of people:"></Label>
+            <TextBox x:Name="numOfPeople"></TextBox>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" Width="150" Margin="5">
+            <Label Content="VolumePerPerson:"></Label>
+            <TextBox x:Name="VolPerPerson"></TextBox>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" Width="150" Margin="5">
+            <Label Content="PriceLower:"></Label>
+            <TextBox x:Name="PriceLow"></TextBox>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" Width="150" Margin="5">
+            <Label Content="PriceHigher:"></Label>
+            <TextBox x:Name="PriceHigh"></TextBox>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" Width="150" Margin="5">
+            <Label Content="ColdVolume:"></Label>
+            <TextBox x:Name="ColdVol"></TextBox>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" Width="150" Margin="5">
+            <Label Content="HotVolume:"></Label>
+            <TextBox x:Name="HotVol"></TextBox>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" Width="150" Margin="5">
+            <Label Content="TotalPrice:"></Label>
+            <Label x:Name="TotPrice"></Label>
+        </DockPanel>
+    </StackPanel>
+</Window>
