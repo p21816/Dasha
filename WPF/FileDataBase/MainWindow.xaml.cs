@@ -29,6 +29,13 @@ namespace FileDataBase
                 FirstName = "Vaysa",
                 LastName = "Homyachkov"
             });
+            Database.Instance.Add(new Database.Record
+            {
+                ID = 2,
+                FirstName = "Petia",
+                LastName = "Bunin"
+            });
+           MessageBox.Show(Database.Instance[0].ToString());
         }
     }
 }
