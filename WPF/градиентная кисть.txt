@@ -1,0 +1,11 @@
+            //LinearGradientBrush b = new LinearGradientBrush();
+            //b.StartPoint = new Point(0, 0);
+            //b.EndPoint = new Point(1, 0);
+            //b.GradientStops.Add(new GradientStop(Colors.Red, 0.01));
+            //b.GradientStops.Add(new GradientStop(Colors.Orange, 0.16));
+            //b.GradientStops.Add(new GradientStop(Colors.Yellow, 0.43));
+            //b.GradientStops.Add(new GradientStop(Colors.Green, 0.53));
+            //b.GradientStops.Add(new GradientStop(Colors.Cyan, 0.63));
+            //b.GradientStops.Add(new GradientStop(Colors.Blue, 0.73));
+            //b.GradientStops.Add(new GradientStop(Colors.Violet, 0.83));
+            //this.Background = b;
