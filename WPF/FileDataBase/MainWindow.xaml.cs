@@ -23,6 +23,12 @@ namespace FileDataBase
         public MainWindow()
         {
             InitializeComponent();
+            //LinearGradientBrush b = new LinearGradientBrush();
+            //b.StartPoint = new Point(0, 0);
+            //b.EndPoint = new Point(1, 0);
+            //b.GradientStops.Add(new GradientStop(Colors.DarkMagenta, 0.16));
+            //b.GradientStops.Add(new GradientStop(Colors.Crimson, 0.83));
+            //this.Background = b;
             Database.Instance.Add(new Database.Record
             {
                 ID = 1,
@@ -32,10 +38,42 @@ namespace FileDataBase
             Database.Instance.Add(new Database.Record
             {
                 ID = 2,
-                FirstName = "Petia",
+                FirstName = "Ann",
                 LastName = "Bunin"
             });
-           MessageBox.Show(Database.Instance[0].ToString());
+            Database.Instance.Add(new Database.Record
+            {
+                ID = 2,
+                FirstName = "Masha",
+                LastName = "Bunin"
+            });
+
+
+            //Database.Instance.Add(new Database.Record
+            //{
+            //    ID = 3,
+            //    FirstName = "Oleg",
+            //    LastName = "Beliaeva"
+            //});
+            //Database.Instance.Add(new Database.Record
+            //{
+            //    ID = 4,
+            //    FirstName = "Alex",
+            //    LastName = "Coder"
+            //});
+            string str = null;
+            foreach (var i in Database.Instance.indexes)
+            {
+                str += i.ToString() + " ";
+            }
+            MessageBox.Show(str);
+         //  MessageBox.Show(Database.Instance[0].ToString());
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
     }
 }

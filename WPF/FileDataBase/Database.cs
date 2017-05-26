@@ -29,13 +29,11 @@ namespace FileDataBase
 
             public static  bool operator >= (Record a, Record b)
             {
-                if (a.FirstName.CompareTo(b.FirstName) == -1 || a.FirstName == b.FirstName) return true;
-                else return false;
+                return (String.Compare(a.FirstName,b.FirstName) >= 0);
             }
             public static  bool operator <= (Record a, Record b)
             {
-                if (a.FirstName.CompareTo(b.FirstName) == 1 || a.FirstName == b.FirstName) return true;
-                else return false;
+                return (String.Compare(a.FirstName, b.FirstName) <= 0);
             }
 
         public  override string  ToString()
@@ -52,7 +50,8 @@ namespace FileDataBase
         int index = 0;
         private Database()
         {
-                
+            File.Delete(pathToDatabase);
+            File.Delete(pathToLineIndexes);
         }
         public void Add(Record record)
         {
@@ -66,23 +65,37 @@ namespace FileDataBase
             writer.Write(cursor);
             writer.Close();
 
-            //if (index == 0)
-            //{
-            //    indexes.Add(index);
-            //}
+
+            bool hasAdded = false;
+            for (int i = 0; i < index; i++)
+            {
+                var elem = Instance[indexes[i]];
+                if(elem >= record)
+                {
+                    indexes.Insert(i, index);
+                    hasAdded=true;
+                    break;
+                }
+            }
+            if (!hasAdded)
+            {
+                indexes.Add(index);
+            }
+            index++;
+
+
             //for (int i = 0; i < index; i++)
             //{
-            //    if (Instance[i] >= Instance[index])
+            //    if (Instance[i] <= Instance[index])
             //    {
             //        indexes.Insert(i, index);
             //        break;
             //    }
-            //    else if (i == index)
+            //    else if(i == index-1)
             //    {
             //        indexes.Add(index);
             //    }
             //}
-            //index++;
 
             // 1. открыть файл, перемотать в конец
             // 2. узнать позицию курсора
@@ -102,11 +115,13 @@ namespace FileDataBase
                 BinaryReader reader = new BinaryReader(File.Open(pathToLineIndexes, FileMode.Open));
                 reader.BaseStream.Position = LineNumber * sizeof(int);
                 int temp = reader.ReadInt32();
+                reader.Close();
 
                 StreamReader file = new StreamReader(pathToDatabase);
                 file.BaseStream.Position = temp; //setting the cursor
                 string record = file.ReadLine();
                 string[] records = record.Split(',');
+                file.Close();
 
                 Record obj = new Record();
                 obj.ID = Convert.ToInt32(records[0]);
