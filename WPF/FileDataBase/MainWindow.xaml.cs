@@ -23,12 +23,12 @@ namespace FileDataBase
         public MainWindow()
         {
             InitializeComponent();
-            //LinearGradientBrush b = new LinearGradientBrush();
-            //b.StartPoint = new Point(0, 0);
-            //b.EndPoint = new Point(1, 0);
-            //b.GradientStops.Add(new GradientStop(Colors.DarkMagenta, 0.16));
-            //b.GradientStops.Add(new GradientStop(Colors.Crimson, 0.83));
-            //this.Background = b;
+            LinearGradientBrush b = new LinearGradientBrush();
+            b.StartPoint = new Point(0, 0);
+            b.EndPoint = new Point(1, 0);
+            b.GradientStops.Add(new GradientStop(Colors.DarkMagenta, 0.16));
+            b.GradientStops.Add(new GradientStop(Colors.Crimson, 0.83));
+            this.Background = b;
             Database.Instance.Add(new Database.Record
             {
                 ID = 1,
