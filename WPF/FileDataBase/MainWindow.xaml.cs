@@ -61,12 +61,12 @@ namespace FileDataBase
             //    FirstName = "Alex",
             //    LastName = "Coder"
             //});
-            string str = null;
-            foreach (var i in Database.Instance.indexes)
-            {
-                str += i.ToString() + " ";
-            }
-            MessageBox.Show(str);
+            //string str = null;
+            //foreach (var i in Database.Instance.indexes)
+            //{
+            //    str += i.ToString() + " ";
+            //}
+            //MessageBox.Show(str);
          //  MessageBox.Show(Database.Instance[0].ToString());
         }
 
