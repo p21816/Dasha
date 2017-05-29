@@ -88,7 +88,6 @@ namespace UserCOntrols
                 typeof(ColorPicker),
                 new FrameworkPropertyMetadata(
                     new PropertyChangedCallback(OnColorComponentChanged))
-
                 );
 
             ColorChangedEvent = EventManager.RegisterRoutedEvent(

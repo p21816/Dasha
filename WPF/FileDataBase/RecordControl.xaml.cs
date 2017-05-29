@@ -24,11 +24,6 @@ namespace FileDataBase
         {
             InitializeComponent();
         }
-        public static DependencyProperty RecordProperty;
-        public static DependencyProperty NameProperty;
-        public static DependencyProperty SurnameProperty;
-        public static DependencyProperty IDProperty;
-
         public Database.Record Record
         {
             get { return (Database.Record)GetValue(RecordProperty); }
@@ -50,6 +45,18 @@ namespace FileDataBase
             set { SetValue(IDProperty, value); }
         }
 
+        public static RoutedEvent RecordChangedEvent;
+        public event RoutedPropertyChangedEventHandler<Database.Record> RecordChanged
+        {
+            add { AddHandler(RecordChangedEvent, value); }
+            remove { RemoveHandler(RecordChangedEvent, value); }
+        }
+
+        public static DependencyProperty RecordProperty;
+        public static DependencyProperty NameProperty;
+        public static DependencyProperty SurnameProperty;
+        public static DependencyProperty IDProperty;
+
         static RecordControl()
         {
             RecordProperty = DependencyProperty.Register(
@@ -59,27 +66,66 @@ namespace FileDataBase
                 new FrameworkPropertyMetadata( "1 ObiWan Kenobi",
                     new PropertyChangedCallback(OnRecordChanged))
                 );
+            NameProperty = DependencyProperty.Register(
+            "Name",
+            typeof(string),
+            typeof(RecordControl),
+            new FrameworkPropertyMetadata(
+            new PropertyChangedCallback(OnRecordComponentChanged))
 
+    );
+            SurnameProperty = DependencyProperty.Register(
+                "Surname",
+                typeof(string),
+                typeof(RecordControl),
+                new FrameworkPropertyMetadata(
+                    new PropertyChangedCallback(OnRecordComponentChanged))
+                );
+
+            IDProperty = DependencyProperty.Register(
+                "ID",
+                typeof(string),
+                typeof(RecordControl),
+                new FrameworkPropertyMetadata(
+                    new PropertyChangedCallback(OnRecordComponentChanged))
+                );
+
+            RecordChangedEvent = EventManager.RegisterRoutedEvent(
+                "RecordChanged",
+                RoutingStrategy.Bubble,
+                typeof(RoutedPropertyChangedEventHandler<Database.Record>),
+                typeof(RecordControl)
+                );
         }
+
+        private static void OnRecordComponentChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        {
+            RecordControl recordPicker = (RecordControl)sender;
+            Database.Record record = recordPicker.Record;
+            if (e.Property == NameProperty)
+            {
+                record.FirstName = (string)e.NewValue;
+            }
+            if (e.Property == SurnameProperty)
+            {
+                record.LastName = (string)e.NewValue;
+            }
+            if (e.Property == IDProperty)
+            {
+                record.ID = (int)e.NewValue;
+            }
+            recordPicker.Record = record;
+        }
+
 
         private static void OnRecordChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            RecordControl colorPicker = (RecordControl)sender;
+
+            RecordControl recordControl = (RecordControl)sender;
             Database.Record newRecord = (Database.Record)e.NewValue;
-            RecordControl.Name = newRecord.Name;
-
-        }
-
-        private static void OnColorChanged(
-    DependencyObject sender,
-    DependencyPropertyChangedEventArgs e
-)
-        {
-            ColorPicker colorPicker = (ColorPicker)sender;
-            Color newColor = (Color)e.NewValue;
-            colorPicker.Red = newColor.R;
-            colorPicker.Green = newColor.G;
-            colorPicker.Blue = newColor.B;
+            recordControl.Name = newRecord.FirstName;
+            recordControl.Surname = newRecord.LastName;
+            recordControl.ID = newRecord.ID;
         }
     }
 }
