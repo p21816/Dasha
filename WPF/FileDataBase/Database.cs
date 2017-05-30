@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FileDataBase
 {
-    class Database
+    public class Database
     {
         public class Record
         {
@@ -82,20 +82,6 @@ namespace FileDataBase
                 indexes.Add(index);
             }
             index++;
-
-
-            //for (int i = 0; i < index; i++)
-            //{
-            //    if (Instance[i] <= Instance[index])
-            //    {
-            //        indexes.Insert(i, index);
-            //        break;
-            //    }
-            //    else if(i == index-1)
-            //    {
-            //        indexes.Add(index);
-            //    }
-            //}
 
             // 1. открыть файл, перемотать в конец
             // 2. узнать позицию курсора

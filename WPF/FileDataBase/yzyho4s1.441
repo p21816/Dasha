@@ -29,10 +29,10 @@ namespace FileDataBase
             get { return (Database.Record)GetValue(RecordProperty); }
             set { SetValue(RecordProperty, value); }
         }
-        public string FirstName
+        public string Name
         {
-            get { return (string)GetValue(FirstNameProperty); }
-            set { SetValue(FirstNameProperty, value); }
+            get { return (string)GetValue(NameProperty); }
+            set { SetValue(NameProperty, value); }
         }
         public string Surname
         {
@@ -45,13 +45,6 @@ namespace FileDataBase
             set { SetValue(IDProperty, value); }
         }
 
-        public bool IsReadOnly
-        {
-            get { return (bool)GetValue(IsReadOnlyProperty); }
-            set { SetValue(IsReadOnlyProperty, value); }
-        }
-
-
         public static RoutedEvent RecordChangedEvent;
         public event RoutedPropertyChangedEventHandler<Database.Record> RecordChanged
         {
@@ -60,36 +53,27 @@ namespace FileDataBase
         }
 
         public static DependencyProperty RecordProperty;
-        public static DependencyProperty FirstNameProperty;
+        public static DependencyProperty NameProperty;
         public static DependencyProperty SurnameProperty;
         public static DependencyProperty IDProperty;
-        public static DependencyProperty IsReadOnlyProperty;
 
         static RecordControl()
         {
-            IsReadOnlyProperty = DependencyProperty.Register(
-                 "IsReadOnly",
-                 typeof(bool),
-                 typeof(RecordControl),
-                 new FrameworkPropertyMetadata(
-                 new PropertyChangedCallback(OnRecordComponentChanged))
-             );
-
             RecordProperty = DependencyProperty.Register(
                 "Record",            // номер счёта 300000305085402
                 typeof(Database.Record),      // в рблях
                 typeof(RecordControl), // для меня
-                new FrameworkPropertyMetadata(new Database.Record(),
+                new FrameworkPropertyMetadata( new Database.Record("1 Obiwan Kenobi"),
                     new PropertyChangedCallback(OnRecordChanged))
                 );
-            FirstNameProperty = DependencyProperty.Register(
-                "FirstName",
-                typeof(string),
-                typeof(RecordControl),
-                new FrameworkPropertyMetadata(
-                new PropertyChangedCallback(OnRecordComponentChanged))
-            );
+            NameProperty = DependencyProperty.Register(
+            "Name",
+            typeof(string),
+            typeof(RecordControl),
+            new FrameworkPropertyMetadata(
+            new PropertyChangedCallback(OnRecordComponentChanged))
 
+    );
             SurnameProperty = DependencyProperty.Register(
                 "Surname",
                 typeof(string),
@@ -100,7 +84,7 @@ namespace FileDataBase
 
             IDProperty = DependencyProperty.Register(
                 "ID",
-                typeof(int),
+                typeof(string),
                 typeof(RecordControl),
                 new FrameworkPropertyMetadata(
                     new PropertyChangedCallback(OnRecordComponentChanged))
@@ -118,7 +102,7 @@ namespace FileDataBase
         {
             RecordControl recordPicker = (RecordControl)sender;
             Database.Record record = recordPicker.Record;
-            if (e.Property == FirstNameProperty)
+            if (e.Property == NameProperty)
             {
                 record.FirstName = (string)e.NewValue;
             }
@@ -130,47 +114,18 @@ namespace FileDataBase
             {
                 record.ID = (int)e.NewValue;
             }
-            if (e.Property == IsReadOnlyProperty)
-            {
-                recordPicker.makeReadonly();
-            }
             recordPicker.Record = record;
         }
 
-        public void RecordClear()
-        {
-            IDTextbox.Clear();
-            nameTextbox.Clear();
-            surTextbox.Clear();
-        }
-
-        public void makeReadonly()
-        {
-            IDTextbox.IsReadOnly = true;
-            nameTextbox.IsReadOnly = true;
-            surTextbox.IsReadOnly = true;
-        }
 
         private static void OnRecordChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
+
             RecordControl recordControl = (RecordControl)sender;
             Database.Record newRecord = (Database.Record)e.NewValue;
-
-            recordControl.FirstName = newRecord.FirstName;
+            recordControl.Name = newRecord.FirstName;
             recordControl.Surname = newRecord.LastName;
             recordControl.ID = newRecord.ID;
-
-            var Eventargs =
-               new RoutedPropertyChangedEventArgs<Database.Record>(
-                   (Database.Record)e.OldValue,
-                   (Database.Record)e.NewValue,
-                   RecordChangedEvent
-               );
-
-            var element = ((UIElement)sender);
-
-            element.RaiseEvent(Eventargs);
-
         }
     }
 }

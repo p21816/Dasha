@@ -23,44 +23,34 @@ namespace FileDataBase
         public MainWindow()
         {
             InitializeComponent();
-            LinearGradientBrush b = new LinearGradientBrush();
-            b.StartPoint = new Point(0, 0);
-            b.EndPoint = new Point(1, 0);
-            b.GradientStops.Add(new GradientStop(Colors.DarkMagenta, 0.16));
-            b.GradientStops.Add(new GradientStop(Colors.Crimson, 0.83));
-            this.Background = b;
+
             Database.Instance.Add(new Database.Record
             {
                 ID = 1,
-                FirstName = "Vaysa",
-                LastName = "Homyachkov"
+                FirstName = "Vasya",
+                LastName = "Petrov"
             });
             Database.Instance.Add(new Database.Record
             {
-                ID = 2,
+                ID = 44,
                 FirstName = "Ann",
-                LastName = "Bunin"
+                LastName = "Petrov"
             });
             Database.Instance.Add(new Database.Record
             {
-                ID = 2,
-                FirstName = "Masha",
-                LastName = "Bunin"
+                ID = 56,
+                FirstName = "Darya",
+                LastName = "Petrov"
             });
 
 
-            //Database.Instance.Add(new Database.Record
-            //{
-            //    ID = 3,
-            //    FirstName = "Oleg",
-            //    LastName = "Beliaeva"
-            //});
-            //Database.Instance.Add(new Database.Record
-            //{
-            //    ID = 4,
-            //    FirstName = "Alex",
-            //    LastName = "Coder"
-            //});
+            //LinearGradientBrush b = new LinearGradientBrush();
+            //b.StartPoint = new Point(0, 0);
+            //b.EndPoint = new Point(1, 0);
+            //b.GradientStops.Add(new GradientStop(Colors.DarkMagenta, 0.16));
+            //b.GradientStops.Add(new GradientStop(Colors.Crimson, 0.83));
+            //this.Background = b;
+
             //string str = null;
             //foreach (var i in Database.Instance.indexes)
             //{
@@ -70,10 +60,45 @@ namespace FileDataBase
          //  MessageBox.Show(Database.Instance[0].ToString());
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Database.Instance.Add(new Database.Record
+            {
+                ID = rec.ID,
+                FirstName = rec.FirstName,
+                LastName = rec.Surname
+            });
+            rec.RecordClear();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            rec.RecordClear();
+            searchedRecord.RecordClear();
+        }
+
+        private void Find_by_linenumber(object sender, RoutedEventArgs e)
+        {
+            int line = Convert.ToInt32(lineNumberTextbox.Text);
+
+        //    searchedRecord.makeReadonly();
+            searchedRecord.ID = Database.Instance[line].ID;
+            searchedRecord.FirstName = Database.Instance[line].FirstName;
+            searchedRecord.Surname = Database.Instance[line].LastName;
+
+            lineNumberTextbox.Clear();
+        }
+
+        private void rec_RecordChanged(object sender, RoutedPropertyChangedEventArgs<Database.Record> e)
+        {
+            if (e.NewValue.ID < 10)
+            {
+                Title = "Плохой";
+            }
+            else
+            {
+                Title = "Хороший";
+            }
+        }
     }
 }

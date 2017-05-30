@@ -88,6 +88,7 @@ namespace UserCOntrols
                 typeof(ColorPicker),
                 new FrameworkPropertyMetadata(
                     new PropertyChangedCallback(OnColorComponentChanged))
+
                 );
 
             ColorChangedEvent = EventManager.RegisterRoutedEvent(
@@ -128,6 +129,15 @@ namespace UserCOntrols
             colorPicker.Red = newColor.R;
             colorPicker.Green = newColor.G;
             colorPicker.Blue = newColor.B;
+
+            var Eventargs = 
+                new RoutedPropertyChangedEventArgs<Color>(
+                    (Color)e.OldValue, 
+                    (Color)e.NewValue,
+                    ColorChangedEvent
+                );
+            var element = ((UIElement)sender);
+            element.RaiseEvent(Eventargs);
         }
 
     }
