@@ -156,16 +156,18 @@ namespace FileDataBase
             RecordControl recordControl = (RecordControl)sender;
             Database.Record newRecord = (Database.Record)e.NewValue;
 
-            recordControl.FirstName = newRecord.FirstName;
-            recordControl.Surname = newRecord.LastName;
-            recordControl.ID = newRecord.ID;
-
             var Eventargs =
                new RoutedPropertyChangedEventArgs<Database.Record>(
                    (Database.Record)e.OldValue,
                    (Database.Record)e.NewValue,
                    RecordChangedEvent
                );
+
+
+            recordControl.FirstName = newRecord.FirstName;
+            recordControl.Surname = newRecord.LastName;
+            recordControl.ID = newRecord.ID;
+
 
             var element = ((UIElement)sender);
 

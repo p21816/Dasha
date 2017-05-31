@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,18 @@ namespace FileDataBase
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        class Model
+        {
+            public ObservableCollection<Database.Record> records = new ObservableCollection<Database.Record>();
+        }
+        Model m = new Model();
         public MainWindow()
         {
             InitializeComponent();
+
+
+            rec.RecordChanged+=rec_RecordChanged;
 
             Database.Instance.Add(new Database.Record
             {
@@ -43,6 +53,10 @@ namespace FileDataBase
                 LastName = "Petrov"
             });
 
+            m.records.Add(Database.Instance[0]);
+            m.records.Add(Database.Instance[1]);
+            m.records.Add(Database.Instance[2]);
+            list.ItemsSource = m.records;
 
             //LinearGradientBrush b = new LinearGradientBrush();
             //b.StartPoint = new Point(0, 0);
@@ -99,6 +113,11 @@ namespace FileDataBase
             {
                 Title = "Хороший";
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(m.records[0].ToString() + " " + m.records[1].ToString() + " "  + m.records[2].ToString() );
         }
     }
 }
