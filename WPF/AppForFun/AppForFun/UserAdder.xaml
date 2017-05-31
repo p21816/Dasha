@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="AppForFun.UserAdder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="110" d:DesignWidth="300"
+             Name="usAdder">
+    <StackPanel>
+        <Label Content="Введите имя: "></Label>
+        <TextBox x:Name="nameTextBox" Text="{Binding ElementName=usAdder, Path=FirstName, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Content="Введите фамилию: " ></Label>
+        <TextBox x:Name="lastNameTextBox" Text="{Binding ElementName=usAdder, Path=LastName, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+    </StackPanel>
+</UserControl>
