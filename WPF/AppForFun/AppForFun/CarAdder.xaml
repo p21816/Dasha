@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="ExamWpf.CarAdder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="110" d:DesignWidth="300"
+             Name="carAdder">
+    <StackPanel>
+        <Label Content="Введите марку: "></Label>
+        <TextBox x:Name="carMarkTextBox" Text="{Binding ElementName=carAdder, Path=CarMark, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Content="Введите модель: " ></Label>
+        <TextBox x:Name="carNameTextBox" Text="{Binding ElementName=carAdder, Path=CarName, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Content="Введите цену: " ></Label>
+        <TextBox x:Name="priceTextBox" Text="{Binding ElementName=carAdder, Path=CarPrice, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+    </StackPanel>
+</UserControl>

@@ -7,7 +7,7 @@
     <ProjectGuid>{E29EBFA5-E290-48F0-AB96-C2770611B83E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AppForFun</RootNamespace>
+    <RootNamespace>ExamWpf</RootNamespace>
     <AssemblyName>AppForFun</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -54,9 +54,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserAdder.xaml.cs">
-      <DependentUpon>UserAdder.xaml</DependentUpon>
+    <Compile Include="Car.cs" />
+    <Compile Include="CarAdder.xaml.cs">
+      <DependentUpon>CarAdder.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -70,7 +70,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserAdder.xaml">
+    <Page Include="CarAdder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

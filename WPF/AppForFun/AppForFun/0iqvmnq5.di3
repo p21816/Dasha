@@ -29,9 +29,9 @@ namespace AppForFun
         public static DependencyProperty FirstNameProperty;
         public static DependencyProperty LastNameProperty;
 
-        public User Record
+        public Car Record
         {
-            get { return (User)GetValue(RecordProperty); }
+            get { return (Car)GetValue(RecordProperty); }
             set { SetValue(RecordProperty, value); }
         }
         public string FirstName
@@ -46,7 +46,7 @@ namespace AppForFun
         }
 
         public static RoutedEvent RecordChangedEvent;
-        public event RoutedPropertyChangedEventHandler<User> RecordChanged
+        public event RoutedPropertyChangedEventHandler<Car> RecordChanged
         {
             add { AddHandler(RecordChangedEvent, value); }
             remove { RemoveHandler(RecordChangedEvent, value); }
@@ -55,9 +55,9 @@ namespace AppForFun
         {
             RecordProperty = DependencyProperty.Register(
                 "Record",            // номер счёта 300000305085402
-                typeof(User),      // в рблях
+                typeof(Car),      // в рблях
                 typeof(UserAdder), // для меня
-                new FrameworkPropertyMetadata(new User(),
+                new FrameworkPropertyMetadata(new Car(),
                     new PropertyChangedCallback(OnRecordChanged))
                 );
 
@@ -80,7 +80,7 @@ namespace AppForFun
             RecordChangedEvent = EventManager.RegisterRoutedEvent(
                 "RecordChanged",
                 RoutingStrategy.Bubble,
-                typeof(RoutedPropertyChangedEventHandler<User>),
+                typeof(RoutedPropertyChangedEventHandler<Car>),
                 typeof(UserAdder)
                 );
         }
@@ -88,7 +88,7 @@ namespace AppForFun
         private static void OnRecordComponentChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             UserAdder userAdder = (UserAdder)sender;
-            User record = userAdder.Record;
+            Car record = userAdder.Record;
             if (e.Property == FirstNameProperty)
             {
                 record.FirstName = (string)e.NewValue;
@@ -104,7 +104,7 @@ namespace AppForFun
         private static void OnRecordChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             UserAdder recordControl = (UserAdder)sender;
-            User newRecord = (User)e.NewValue;
+            Car newRecord = (Car)e.NewValue;
             recordControl.FirstName = newRecord.FirstName;
             recordControl.LastName = newRecord.LastName;
         }

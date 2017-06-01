@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AppForFun
+namespace ExamWpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -22,6 +22,7 @@ namespace AppForFun
     public partial class MainWindow : Window
     {
         Model m = new Model();
+        bool f = true;
         public MainWindow()
         {
             InitializeComponent();
@@ -51,8 +52,34 @@ namespace AppForFun
             img1.Width = 35;
             img1.Height = 35;
         }
+        private void img2_MouseEnter(object sender, MouseEventArgs e)
+        {
+            img2.Width = 40;
+            img2.Height = 40;
+        }
+
+        private void img2_MouseLeave(object sender, MouseEventArgs e)
+        {
+            img2.Width = 35;
+            img2.Height = 35;
+        }
 
         #endregion
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Car c = new Car();
+            c.Mark = adder.CarMark;
+            c.CarName = adder.CarName;
+            c.Price = adder.CarPrice;
+            if (m.IsValid(c) && f) m.cars.Add(c);
+            else if (f) MessageBox.Show("Такая машина уже существует");
+            else if (m.IsValid(c) && !f)
+            {
+                m.cars.RemoveAt(0);
+            }
+            adder.RecordClear();
+        }
 
         private void img_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -61,33 +88,38 @@ namespace AppForFun
 
             adder.Visibility = Visibility.Visible;
             adder.IsEnabled = true;
-            addUser.Visibility = Visibility.Visible;
-            addUser.IsEnabled = true;
+            addCar.Visibility = Visibility.Visible;
+            addCar.IsEnabled = true;
+            addCar.Content = "Добавить";
+            f = true;
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            m.records.Add(new User
-            {
-                FirstName = adder.FirstName,
-                LastName = adder.LastName
-            });
-            adder.RecordClear();
-        }
-
         private void img1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
            // MessageBox.Show(m.records[0].FirstName.ToString() + " " + m.records[0].LastName.ToString());
             adder.Visibility = Visibility.Hidden;
             adder.IsEnabled = false;
-            addUser.Visibility = Visibility.Hidden;
-            addUser.IsEnabled = false;
+            addCar.Visibility = Visibility.Hidden;
+            addCar.IsEnabled = false;
 
             dataGrid.IsEnabled = true;
             dataGrid.Visibility = Visibility.Visible;
 
-            dataGrid.ItemsSource = m.records;
+            dataGrid.ItemsSource = m.cars;
 
         }
+        private void img2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            dataGrid.IsEnabled = false;
+            dataGrid.Visibility = Visibility.Hidden;
+
+            adder.Visibility = Visibility.Visible;
+            adder.IsEnabled = true;
+            addCar.Visibility = Visibility.Visible;
+            addCar.IsEnabled = true;
+            addCar.Content = "Удалить";
+            f = false;
+        }
+
+
     }
 }

@@ -9,10 +9,10 @@ using System.Windows;
 
 namespace AppForFun
 {
-    public class User
+    public class Car
     {
         private string firstName;
-        public string FirstName
+        public string Mark
         {
             get { return firstName; }
             set { firstName = value;
@@ -36,10 +36,10 @@ namespace AppForFun
         }
 
 
-        public User() { }
-        public User(string firstName, string lastName)
+        public Car() { }
+        public Car(string firstName, string lastName)
         {
-            this.FirstName = firstName;
+            this.Mark = firstName;
             this.LastName = lastName;
         }
 

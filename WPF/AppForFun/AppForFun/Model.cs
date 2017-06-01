@@ -5,10 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppForFun
+namespace ExamWpf
 {
     class Model
     {
-        public ObservableCollection<User> records = new ObservableCollection<User>();  
+        public ObservableCollection<Car> cars = new ObservableCollection<Car>();
+
+        public bool IsValid(Car obj)
+        {
+            foreach(var c in cars)
+            {
+                if ((c.CarName == obj.CarName) && (c.Mark == obj.Mark) && (c.Price == obj.Price)) return false;
+            }
+            return true;
+        }
+
     }
 }
