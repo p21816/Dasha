@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApplication3
+namespace UserCOntrols
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,11 +23,12 @@ namespace WpfApplication3
         public MainWindow()
         {
             InitializeComponent();
+            color1.ColorChanged += color1_ColorChanged;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        void color1_ColorChanged(object sender, RoutedPropertyChangedEventArgs<Color> e)
         {
-            MessageBox.Show("Test");
+            color2.Red = e.NewValue.G;
         }
     }
 }

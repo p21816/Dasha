@@ -1,0 +1,131 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace FileDataBase
+{
+    /// <summary>
+    /// Interaction logic for RecordControl.xaml
+    /// </summary>
+    public partial class RecordControl : UserControl
+    {
+        public RecordControl()
+        {
+            InitializeComponent();
+        }
+        public Database.Record Record
+        {
+            get { return (Database.Record)GetValue(RecordProperty); }
+            set { SetValue(RecordProperty, value); }
+        }
+        public string Name
+        {
+            get { return (string)GetValue(NameProperty); }
+            set { SetValue(NameProperty, value); }
+        }
+        public string Surname
+        {
+            get { return (string)GetValue(SurnameProperty); }
+            set { SetValue(SurnameProperty, value); }
+        }
+        public int ID
+        {
+            get { return (int)GetValue(IDProperty); }
+            set { SetValue(IDProperty, value); }
+        }
+
+        public static RoutedEvent RecordChangedEvent;
+        public event RoutedPropertyChangedEventHandler<Database.Record> RecordChanged
+        {
+            add { AddHandler(RecordChangedEvent, value); }
+            remove { RemoveHandler(RecordChangedEvent, value); }
+        }
+
+        public static DependencyProperty RecordProperty;
+        public static DependencyProperty NameProperty;
+        public static DependencyProperty SurnameProperty;
+        public static DependencyProperty IDProperty;
+
+        static RecordControl()
+        {
+            RecordProperty = DependencyProperty.Register(
+                "Record",            // номер счёта 300000305085402
+                typeof(Database.Record),      // в рблях
+                typeof(RecordControl), // для меня
+                new FrameworkPropertyMetadata( new Database.Record("1 Obiwan Kenobi"),
+                    new PropertyChangedCallback(OnRecordChanged))
+                );
+            NameProperty = DependencyProperty.Register(
+            "Name",
+            typeof(string),
+            typeof(RecordControl),
+            new FrameworkPropertyMetadata(
+            new PropertyChangedCallback(OnRecordComponentChanged))
+
+    );
+            SurnameProperty = DependencyProperty.Register(
+                "Surname",
+                typeof(string),
+                typeof(RecordControl),
+                new FrameworkPropertyMetadata(
+                    new PropertyChangedCallback(OnRecordComponentChanged))
+                );
+
+            IDProperty = DependencyProperty.Register(
+                "ID",
+                typeof(string),
+                typeof(RecordControl),
+                new FrameworkPropertyMetadata(
+                    new PropertyChangedCallback(OnRecordComponentChanged))
+                );
+
+            RecordChangedEvent = EventManager.RegisterRoutedEvent(
+                "RecordChanged",
+                RoutingStrategy.Bubble,
+                typeof(RoutedPropertyChangedEventHandler<Database.Record>),
+                typeof(RecordControl)
+                );
+        }
+
+        private static void OnRecordComponentChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        {
+            RecordControl recordPicker = (RecordControl)sender;
+            Database.Record record = recordPicker.Record;
+            if (e.Property == NameProperty)
+            {
+                record.FirstName = (string)e.NewValue;
+            }
+            if (e.Property == SurnameProperty)
+            {
+                record.LastName = (string)e.NewValue;
+            }
+            if (e.Property == IDProperty)
+            {
+                record.ID = (int)e.NewValue;
+            }
+            recordPicker.Record = record;
+        }
+
+
+        private static void OnRecordChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        {
+
+            RecordControl recordControl = (RecordControl)sender;
+            Database.Record newRecord = (Database.Record)e.NewValue;
+            recordControl.Name = newRecord.FirstName;
+            recordControl.Surname = newRecord.LastName;
+            recordControl.ID = newRecord.ID;
+        }
+    }
+}
