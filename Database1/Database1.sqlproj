@@ -7,7 +7,7 @@
     <Name>Database1</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{49b88f01-cb0a-4fe0-b15e-4ac7db4ebda2}</ProjectGuid>
+    <ProjectGuid>{a0c74179-6976-4ab0-8f99-37bd0e9c3f90}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -17,7 +17,7 @@
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
@@ -61,12 +61,17 @@
   <ItemGroup>
     <Build Include="People.sql" />
     <Build Include="Phones.sql" />
+    <Build Include="Toothbrushes.sql" />
+    <Build Include="Chopper.sql" />
+    <Build Include="Moods.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database1.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Script1.sql" />
-    <None Include="DelScript.sql" />
+    <None Include="Script2.sql" />
+    <None Include="Script3.sql" />
+    <None Include="Script4.sql" />
   </ItemGroup>
 </Project>
