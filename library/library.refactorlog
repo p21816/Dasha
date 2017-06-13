@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="b9d3083e-9ccd-4515-9305-64d22551ced2" ChangeDateTime="06/13/2017 07:06:24">
+    <Property Name="ElementName" Value="[dbo].[book].[Author]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[book]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AuthorID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ad49a144-0572-4f36-8656-15a4abca4588" ChangeDateTime="06/13/2017 07:17:22">
+    <Property Name="ElementName" Value="[dbo].[book].[Publisher]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[book]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PublisherID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c3ce1fe0-1c3d-473d-9acd-0851174290bb" ChangeDateTime="06/13/2017 07:17:26">
+    <Property Name="ElementName" Value="[dbo].[book].[Genre]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[book]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="GenreID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9438bb27-14e9-4cac-af34-81595b840ab3" ChangeDateTime="06/13/2017 08:06:54">
+    <Property Name="ElementName" Value="[dbo].[Subsriber].[Address]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Subsriber]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SubsriberAddress" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="41a5e6fb-985f-42f3-b753-cd94581ecd5c" ChangeDateTime="06/13/2017 08:18:07">
+    <Property Name="ElementName" Value="[dbo].[Catalogue].[dateIn]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Catalogue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="dateOut" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="524ee9af-6c13-4251-bfa0-b7ba80fafab9" ChangeDateTime="06/13/2017 08:18:11">
+    <Property Name="ElementName" Value="[dbo].[Catalogue].[date]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Catalogue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="dateIn" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e3f85ce6-2a56-41d9-a12e-dd6c75f77a78" ChangeDateTime="06/13/2017 08:23:49">
+    <Property Name="ElementName" Value="[dbo].[FK_Catalogue_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Catalogue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Catalogue_ToBook]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2b116be2-d4c9-45e4-a08d-cedbb43c3a84" ChangeDateTime="06/13/2017 08:23:59">
+    <Property Name="ElementName" Value="[dbo].[FK_Catalogue_ToTable_1]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Catalogue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Catalogue_ToSubsriber]" />
+  </Operation>
+</Operations>
