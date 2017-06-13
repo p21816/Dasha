@@ -1,44 +1,75 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FileDataBase
 {
-    class Database
+    public class Database
     {
         public class Record
         {
-            public int ID;
-            public string LastName;
-            public string FirstName;
+            private int id;
+            public int ID
+            {
+                get { return id; }
+                set { id = value; }
+            }
+
+
+            private string lastName;
+            public string LastName
+            {
+                get { return lastName; }
+                set { lastName = value; }
+            }
+
+
+            private string firstName;
+            public string FirstName
+            {
+                get { return firstName; }
+                set { firstName = value;
+                OnPropertyChanged("FirstName");
+                }
+            }
+
+
+            public event PropertyChangedEventHandler PropertyChanged;
+            public void OnPropertyChanged([CallerMemberName]string prop = "")
+            {
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            }
 
             public static  bool operator == (Record a, Record b)
             {
-                if (a.FirstName == b.FirstName) return true;
+                if (a.firstName == b.firstName) return true;
                 else return false;
             }
 
             public static  bool operator != (Record a, Record b)
             {
-                if (a.FirstName == b.FirstName) return false;
+                if (a.firstName == b.firstName) return false;
                 else return true;
             }
 
             public static  bool operator >= (Record a, Record b)
             {
-                return (String.Compare(a.FirstName,b.FirstName) >= 0);
+                return (String.Compare(a.firstName,b.firstName) >= 0);
             }
             public static  bool operator <= (Record a, Record b)
             {
-                return (String.Compare(a.FirstName, b.FirstName) <= 0);
+                return (String.Compare(a.firstName, b.firstName) <= 0);
             }
 
         public  override string  ToString()
         {
-            return this.ID + " " + this.FirstName + " " + this.LastName ;
+            return this.id + " " + this.firstName + " " + this.lastName ;
         }
 
         }
@@ -82,20 +113,6 @@ namespace FileDataBase
                 indexes.Add(index);
             }
             index++;
-
-
-            //for (int i = 0; i < index; i++)
-            //{
-            //    if (Instance[i] <= Instance[index])
-            //    {
-            //        indexes.Insert(i, index);
-            //        break;
-            //    }
-            //    else if(i == index-1)
-            //    {
-            //        indexes.Add(index);
-            //    }
-            //}
 
             // 1. открыть файл, перемотать в конец
             // 2. узнать позицию курсора

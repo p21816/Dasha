@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[Moods]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+)
