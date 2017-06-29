@@ -7,4 +7,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="[FK_Accounts_ToCurrency]" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="f8d3fdf7-1c24-4220-ac47-3db7e2178447" ChangeDateTime="06/29/2017 07:22:17">
+    <Property Name="ElementName" Value="[dbo].[Accounts].[Sum]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Accounts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AccountValue" />
+  </Operation>
 </Operations>
