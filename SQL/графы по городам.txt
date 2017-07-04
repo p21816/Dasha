@@ -1,0 +1,19 @@
+WITH DirectReports (id1, id2, [Level], [route])
+AS
+(
+-- Anchor member definition
+    SELECT e.id1, e.id2, 0 AS [Level], cast('route' as nvarchar(MAX))    [route]
+    FROM dbo.friendship AS e
+    WHERE id1 = 6
+    UNION ALL
+-- Recursive member definition
+    SELECT e.id1, e.id2, [Level] + 1 ,CONCAT(d.[route], e.id2)
+    FROM dbo.friendship AS e
+    INNER JOIN DirectReports AS d
+        ON e.id1 = d.id2 
+		    WHERE [Level] < 6
+
+)
+-- Statement that executes the CTE
+SELECT * FROM DirectReports
+WHERE id2 = 3

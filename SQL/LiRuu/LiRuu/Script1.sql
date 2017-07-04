@@ -1,11 +1,11 @@
-﻿DELETE FROM Comments
-DELETE FROM Subsription
-DELETE FROM Entries
-DELETE FROM UserInfo
+﻿--DELETE FROM Comments
+--DELETE FROM Subsription
+--DELETE FROM Entries
+--DELETE FROM UserInfo
 
 INSERT INTO UserInfo( Id, Login, CodedPassword) VALUES (1, 'solnishlo' , '1234567')
 INSERT INTO UserInfo( Id, Login, CodedPassword) VALUES (2, 'dojdik' , '7654321')
-INSERT INTO UserInfo( Id, Login, CodedPassword) VALUES (3, 'sneggg' , '3333333')
+INSERT INTO UserInfo( Id, Login, CodedPassword) VALUES (3, 'sneg' , '3333333')
 INSERT INTO UserInfo( Id, Login, CodedPassword) VALUES (4, 'tuchka' , '4444444')
 INSERT INTO UserInfo( Id, Login, CodedPassword) VALUES (5, 'oblako' , '5555555')
 
