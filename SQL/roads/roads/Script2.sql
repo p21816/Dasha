@@ -1,0 +1,1 @@
+﻿ALTER VIEW Cities AS SELECT DISTINCT id1 FROM roads
