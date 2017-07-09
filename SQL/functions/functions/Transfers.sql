@@ -6,7 +6,8 @@
 	[Payer] INT NOT NULL,
 	[Beneficiar] INT NOT NULL,
 	[Amount] INT NOT NULL,
-	[IdCurrency] INT NOT NULL,
+	[IdCurrency] INT NULL,
 	[Comment] NVARCHAR(50), 
+    [Code] NCHAR(10) NULL, 
     CONSTRAINT [FK_Transfers_ToCurrency] FOREIGN KEY ([IdCurrency]) REFERENCES [Currency]([Id])
 )
