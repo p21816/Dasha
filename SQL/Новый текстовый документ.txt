@@ -3,7 +3,23 @@ CREATE TRIGGER [HotelDeletion]
 	INSTEAD OF DELETE
 	AS
 	BEGIN
-	--select * from deleted
-	SELECT * FROM Tour JOIN deleted ON idHotel = deleted.Id
-		--UPDATE Tour SET idHotel = 4 JOIN deleted ON idHotel = deleted.Id
+	IF (deleted.idCountry = 1)
+	BEGIN
+	  update tour set idHotel = 4 FROM Tour LEFT JOIN deleted ON idHotel = deleted.Id WHERE idHotel = deleted.Id
+	  RETURN
+	 END
+	 ELSE 
+	 BEGIN
+	 select 'hrydg'
+	 END
+	-- IF(deleted.idcountry = 2)
+	-- BEGIN
+	-- 	  update tour set idHotel = 5 FROM Tour LEFT JOIN deleted ON idHotel = deleted.Id WHERE idHotel = deleted.Id
+	-- RETURN
+	-- END
+	-- IF(deleted.idcountry = 3)
+	-- BEGIN
+	--	 update tour set idHotel = 5 FROM Tour LEFT JOIN deleted ON idHotel = deleted.Id WHERE idHotel = deleted.Id
+	--	 RETURN
+	--END
 	END

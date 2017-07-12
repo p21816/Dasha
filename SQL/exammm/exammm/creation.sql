@@ -11,6 +11,20 @@ CREATE TABLE [Hotels]
 	[idCountry] INT NOT NULL,
 )
 
+CREATE TABLE [Hotels]
+(
+    [Id] INT NOT NULL PRIMARY KEY, 
+	[HotelName] NVARCHAR(MAX),
+	[idCountry] INT NOT NULL,
+)
+
+CREATE TABLE [ReserveHotels]
+(
+    [Id] INT NOT NULL PRIMARY KEY, 
+	[HotelName] NVARCHAR(MAX),
+	[idCountry] INT NOT NULL,
+)
+
 CREATE TABLE [Guides]
 (
     [Id] INT  NOT NULL PRIMARY KEY, 
@@ -18,6 +32,8 @@ CREATE TABLE [Guides]
 	[LastName] NVARCHAR(50),
 	[Phone] NVARCHAR(30)
 )
+
+
 
 CREATE TABLE [Tour]
 (
@@ -47,7 +63,10 @@ INSERT INTO Hotels VALUES
 (1, 'Canguu Dream' , 1),
 (2, 'Pripiat', 2),
 (3 , 'Bella Sky Copenhagen',3),
-(4 , 'M.A. Homestay', 1)
+(4 , 'M.A. Homestay', 1),
+(5, 'Polesie', 2),
+(6, 'Seagull',3)
+
 
 INSERT INTO Tour VALUES
 (1 , '2017-08-01', '2017-08-15', 1 , 'two-week tour to Bali', 1, 150.000, 60 , 'Avia', 1),
@@ -58,6 +77,6 @@ CREATE INDEX guideIndex ON Tour(idGuide)
 
 select * from tour  LEFT JOIN Hotels ON Hotels.Id = Tour.idHotel
 
-select * from tour
+select [Description] , HotelName  from tour LEFT JOIN Hotels ON idHotel = Hotels.Id
 delete from Hotels where Hotels.Id = 1
-select * from tour
+select * from Hotels
