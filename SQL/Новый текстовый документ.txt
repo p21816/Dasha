@@ -1,0 +1,9 @@
+CREATE TRIGGER [HotelDeletion]
+	ON [dbo].[Hotels]
+	INSTEAD OF DELETE
+	AS
+	BEGIN
+	--select * from deleted
+	SELECT * FROM Tour JOIN deleted ON idHotel = deleted.Id
+		--UPDATE Tour SET idHotel = 4 JOIN deleted ON idHotel = deleted.Id
+	END
