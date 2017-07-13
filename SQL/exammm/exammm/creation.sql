@@ -1,4 +1,5 @@
-﻿CREATE TABLE [Countries]
+﻿
+CREATE TABLE [Countries]
 (
     [Id] INT NOT NULL PRIMARY KEY, 
 	[CountryName] NVARCHAR(MAX),
@@ -65,7 +66,8 @@ INSERT INTO Hotels VALUES
 (3 , 'Bella Sky Copenhagen',3),
 (4 , 'M.A. Homestay', 1),
 (5, 'Polesie', 2),
-(6, 'Seagull',3)
+(6, 'Seagull',3),
+(7, 'Nice Inn', 1)
 
 
 INSERT INTO Tour VALUES
@@ -77,6 +79,9 @@ CREATE INDEX guideIndex ON Tour(idGuide)
 
 select * from tour  LEFT JOIN Hotels ON Hotels.Id = Tour.idHotel
 
-select [Description] , HotelName  from tour LEFT JOIN Hotels ON idHotel = Hotels.Id
-delete from Hotels where Hotels.Id = 1
 select * from Hotels
+select [Description] , HotelName  from tour LEFT JOIN Hotels ON idHotel = Hotels.Id
+
+delete from Hotels where Hotels.Id = 1
+
+

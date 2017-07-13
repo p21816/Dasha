@@ -60,5 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="creation.sql" />
+    <None Include="trigger.sql" />
   </ItemGroup>
 </Project>
