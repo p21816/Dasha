@@ -68,3 +68,30 @@ SELECT TOP (1)  mediana AS 'у стольки человек', numberOfFriends A
 GROUP BY id1 ) AS tbl  GROUP BY numberOfFriends) AS t ORDER BY mediana DESC
 
 -- 3 самых влиятельных людей, влиятельные люди имеют наибольшее количество уникальных друзей друзей
+select TOP (3) id1, COUNT(id1) as numberOfUniqueFriendsOfFriends from (SELECT s.id1, t.id2  FROM TransitiveFriendship s LEFT JOIN TransitiveFriendship t
+ON t.id1 = s.id2 
+WHERE s.id1 != t.id2
+GROUP BY s.id1 , t.id2) as ttt GROUP BY id1 ORDER BY numberOfUniqueFriendsOfFriends DESC
+
+---------- ЗАДАНИЕ 4 ----------
+--Добавить в таблицу People поле пол CHAR(1) с ограничением на значения M (Male) и F (Female)
+SELECT * FROM People
+ALTER TABLE People ADD Sex CHAR(1) CHECK (Sex in('M' , 'F'))
+UPDATE People SET Sex = 'M' WHERE PersonalNumber in(12, 13, 14, 15, 16)
+UPDATE People SET Sex = 'F' WHERE PersonalNumber in(11, 17, 18)
+
+--В результате установления демократического строя в провинции Кират целях совершенствования порядка учёта граждан в законодательство были внесены поправки,
+--отменяющие бинарный характер учёта пола, и вводящий взамен характеристики
+--генетического пола, гонадного пола, внутреннего и внешнего генитального пола, гендрной и сексуальной идентичности. 
+--Не уничтожая данные таблицы people привести её в соответствие с законодательством провинции Кират
+ALTER TABLE People ADD GeneticSex CHAR(2) CHECK (GeneticSex in('XY' , 'XX'))
+UPDATE People SET GeneticSex = 'XY' WHERE PersonalNumber in(12, 13, 14, 15, 16)
+UPDATE People SET GeneticSex = 'XX' WHERE PersonalNumber in(11, 17, 18)
+
+
+ALTER TABLE People ADD GonadalSex NVARCHAR(30)
+ALTER TABLE People ADD InternalGenitalSex NVARCHAR(30)
+ALTER TABLE People ADD ExternalGenitalSex NVARCHAR(30)
+ALTER TABLE People ADD GenderIdentity NVARCHAR(30)
+ALTER TABLE People ADD SexualIdentity NVARCHAR(30)
+
