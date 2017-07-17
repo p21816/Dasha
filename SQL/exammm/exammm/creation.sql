@@ -12,19 +12,6 @@ CREATE TABLE [Hotels]
 	[idCountry] INT NOT NULL,
 )
 
-CREATE TABLE [Hotels]
-(
-    [Id] INT NOT NULL PRIMARY KEY, 
-	[HotelName] NVARCHAR(MAX),
-	[idCountry] INT NOT NULL,
-)
-
-CREATE TABLE [ReserveHotels]
-(
-    [Id] INT NOT NULL PRIMARY KEY, 
-	[HotelName] NVARCHAR(MAX),
-	[idCountry] INT NOT NULL,
-)
 
 CREATE TABLE [Guides]
 (
@@ -69,7 +56,7 @@ INSERT INTO Hotels VALUES
 (6, 'Seagull',3),
 (7, 'Nice Inn', 1)
 
-
+delete from tour
 INSERT INTO Tour VALUES
 (1 , '2017-08-01', '2017-08-15', 1 , 'two-week tour to Bali', 1, 150.000, 60 , 'Avia', 1),
 (2, '2017-08-15' ,'2017-08-18', 2, 'two-day tour to Pripiat', 2, 10.000 , 40 , 'Bus', 2),
@@ -82,6 +69,6 @@ select * from tour  LEFT JOIN Hotels ON Hotels.Id = Tour.idHotel
 select * from Hotels
 select [Description] , HotelName  from tour LEFT JOIN Hotels ON idHotel = Hotels.Id
 
-delete from Hotels where Hotels.Id = 1
+delete from Hotels where Hotels.Id in (1,2)
 
 
