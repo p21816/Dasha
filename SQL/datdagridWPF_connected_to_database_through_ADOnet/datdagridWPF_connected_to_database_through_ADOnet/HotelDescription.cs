@@ -9,14 +9,12 @@ namespace datdagridWPF_connected_to_database_through_ADOnet
     public class HotelDescription
     {
         private int id;
-
         public int Id1
         {
             get { return id; }
             set { id = value; }
         }
         private string name;
-
         public string Name
         {
             get { return name; }
