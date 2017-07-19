@@ -69,11 +69,11 @@ namespace datdagridWPF_connected_to_database_through_ADOnet
                         {
                             string queryString =
                                 string.Format("UPDATE dbo.Hotels SET HotelName = @hName , idCountry = @idc WHERE Hotels.Id = '{0}'", HotelsInfo[i].Id1);
-                            int paramValue0 = HotelsInfo[i].Id1;
+                            //int paramValue0 = HotelsInfo[i].Id1;
                             string paramValue1 = HotelsInfo[i].Name;
                             int paramValue2 = HotelsInfo[i].IdCountry;
                             SqlCommand command = new SqlCommand(queryString, connection);
-                            command.Parameters.AddWithValue("@idd", paramValue0);
+                            //command.Parameters.AddWithValue("@idd", paramValue0);
                             command.Parameters.AddWithValue("@hName", paramValue1);
                             command.Parameters.AddWithValue("@idc", paramValue2);
                             int numberOfUpdations = command.ExecuteNonQuery();

@@ -30,8 +30,8 @@ namespace datdagridWPF_connected_to_database_through_ADOnet
             InitializeComponent();
             m.HotelsData = c.getInfoFromDataBase();
             HotelsDatagrid.ItemsSource = m.HotelsData;
-            HotelsDatagrid.CellEditEnding += HotelsDatagrid_CellEditEnding;
-            m.HotelsData.CollectionChanged += HotelsData_CollectionChanged;
+            //HotelsDatagrid.CellEditEnding += HotelsDatagrid_CellEditEnding;
+            //m.HotelsData.CollectionChanged += HotelsData_CollectionChanged;
         }
 
         void HotelsData_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -49,6 +49,7 @@ namespace datdagridWPF_connected_to_database_through_ADOnet
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             c.setInfoToDataBase(m.HotelsData);
+            System.Windows.Application.Current.Shutdown();
         }
 
     }

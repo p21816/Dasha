@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace datdagridWPF_connected_to_database_through_ADOnet
 {
-    public class HotelDescription
+    public class HotelDescription : INotifyPropertyChanged
     {
         private int id;
         public int Id1

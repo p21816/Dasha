@@ -1,0 +1,35 @@
+﻿<Window x:Class="MyConnection.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="20 8 20 8" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" x:Name="phonesGrid" ItemsSource="{Binding PFData}">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="id" Binding="{Binding Id1}" Header="ID PEOPLE" Width="100"/>
+                <DataGridTextColumn x:Name="firstname" Binding="{Binding FName}" Header="FIRST NAME" Width="170"/>
+                <DataGridTextColumn x:Name="lastname" Binding="{Binding LName}" Header="LAST NAME" Width="170"/>
+                <DataGridTextColumn x:Name="birthday" Binding="{Binding Phone}" Header="PHONE" Width="80"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
+            <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />
+        </StackPanel>
+    </Grid>
+
+</Window>
