@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PeoplePhonesADOnet
 {
-    public class Human
+    public class Human : INotifyPropertyChanged
     {
         int id;
         public int Id
@@ -19,14 +22,22 @@ namespace PeoplePhonesADOnet
         public string FirstName
         {
             get { return firstname; }
-            set { firstname = value; }
+            set {
+                    firstname = value;
+                    OnPropertyChanged("FirstName");
+                 }
         }
+
+    
 
         string lastname;
         public string LastName
         {
             get { return lastname; }
-            set { lastname = value; }
+            set {
+                    lastname = value;
+                    OnPropertyChanged("LastName");
+                }
         }
 
         string phone;
@@ -34,6 +45,13 @@ namespace PeoplePhonesADOnet
         {
             get { return phone; }
             set { phone = value; }
+        }
+
+         public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
     }
 }

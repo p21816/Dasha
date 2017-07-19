@@ -16,7 +16,7 @@ namespace PeoplePhonesADOnet
     class ConnectionToDatabase
     {
         string connectionString = "Server=(localdb)\\Projects;Integrated Security=true;Initial Catalog=PeoplePhones;";
-        public ObservableCollection<Human> getInfoFromDataBase()
+        public ObservableCollection<Human> getInfoFromDataBase() //чтение данных из базы
         {
             string queryString = "SELECT People.Id, Firstname, Lastname , MAX(phone) from dbo.People LEFT JOIN dbo.Phones ON People.Id = Phones.people_id GROUP BY people.Id, Firstname, Lastname ";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -45,7 +45,8 @@ namespace PeoplePhonesADOnet
             return Model.PeopleData;
         }
 
-        public void setInfoToDataBase()
+
+        public void setInfoToDataBase()  //запись данных в базу данных
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

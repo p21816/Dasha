@@ -26,6 +26,8 @@ namespace PeoplePhonesADOnet
             InitializeComponent();
             Model.PeopleData = c.getInfoFromDataBase();
             PeoplePhonesDatagrid.ItemsSource = Model.PeopleData;
+            //this.DataContext = Model.PeopleData;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

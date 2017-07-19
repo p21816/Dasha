@@ -4,8 +4,12 @@
         Title="MainWindow" Height="350" Width="525">
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
-            <DataGrid x:Name="PeoplePhonesDatagrid">
+            <DataGrid x:Name="PeoplePhonesDatagrid" AutoGenerateColumns="False" ItemsSource="{Binding PeopleData}">
                 <DataGrid.Columns >
+                    <DataGridTextColumn x:Name="id" Binding="{Binding Id}" Header="ID" Width="100"/>
+                    <DataGridTextColumn x:Name="firstname" Binding="{Binding FirstName}" Header="FIRST NAME" Width="170"/>
+                    <DataGridTextColumn x:Name="lastname" Binding="{Binding LastName}" Header="LAST NAME" Width="170"/>
+                    <DataGridTextColumn x:Name="phone" Binding="{Binding Phone}" Header="PHONE" Width="170"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
