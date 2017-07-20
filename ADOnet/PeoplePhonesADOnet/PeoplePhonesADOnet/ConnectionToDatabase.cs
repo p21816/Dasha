@@ -9,12 +9,11 @@ using System.Windows;
 
 namespace PeoplePhonesADOnet
 {
-    public static class Model
-    {
-        static public ObservableCollection<Human> PeopleData = new ObservableCollection<Human>();
-    }
+   
     class ConnectionToDatabase
     {
+        List<int> ids = new List<int>();
+
         string connectionString = "Server=(localdb)\\Projects;Integrated Security=true;Initial Catalog=PeoplePhones;";
         public ObservableCollection<Human> getInfoFromDataBase() //чтение данных из базы
         {
@@ -28,12 +27,10 @@ namespace PeoplePhonesADOnet
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        Human h = new Human();
-                        h.Id = Convert.ToInt32(reader[0]);
-                        h.FirstName = reader[1].ToString();
-                        h.LastName = reader[2].ToString();
-                        h.Phone = reader[3].ToString();
-                        Model.PeopleData.Add(h);
+                        Human h = new Human(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(), reader[3].ToString());
+                        h.PropertyChanged += h_PropertyChanged;
+                        Model.Instance.PeopleData.Add(h);
+
                     }
                     reader.Close();
                 }
@@ -42,7 +39,13 @@ namespace PeoplePhonesADOnet
                     MessageBox.Show(ex.Message);
                 }
             }
-            return Model.PeopleData;
+            return Model.Instance.PeopleData;
+        }
+
+        void h_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            int i = ((Human)sender).Id;
+            ids.Add(i);
         }
 
 
@@ -54,17 +57,30 @@ namespace PeoplePhonesADOnet
                 {
                     connection.Open();
 
-                    for (int i = 0; i < Model.PeopleData.Count; i++)
+                    foreach(int i in ids)
                     {
                         string queryString =
-                            string.Format("UPDATE dbo.People SET Firstname = @hName , Lastname = @hLastName WHERE People.Id = '{0}'", Model.PeopleData[i].Id);
-                        string paramValue1 = Model.PeopleData[i].FirstName;
-                        string paramValue2 = Model.PeopleData[i].LastName;
+                              "UPDATE dbo.People SET Firstname = @hName , Lastname = @hLastName WHERE People.Id = @editedId";
+                        string paramValue1 = Model.Instance.GetHumanById(i).FirstName;
+                        string paramValue2 = Model.Instance.GetHumanById(i).LastName;
                         SqlCommand command = new SqlCommand(queryString, connection);
                         command.Parameters.AddWithValue("@hName", paramValue1);
                         command.Parameters.AddWithValue("@hLastName", paramValue2);
+                        command.Parameters.AddWithValue("@editedId", i);
                         int numberOfUpdations = command.ExecuteNonQuery();
                     }
+
+                    //for (int i = 0; i < Model.Instance.PeopleData.Count; i++)
+                    //{
+                    //    string queryString =
+                    //        string.Format("UPDATE dbo.People SET Firstname = @hName , Lastname = @hLastName WHERE People.Id = '{0}'", Model.Instance.PeopleData[i].Id);
+                    //    string paramValue1 = Model.Instance.PeopleData[i].FirstName;
+                    //    string paramValue2 = Model.Instance.PeopleData[i].LastName;
+                    //    SqlCommand command = new SqlCommand(queryString, connection);
+                    //    command.Parameters.AddWithValue("@hName", paramValue1);
+                    //    command.Parameters.AddWithValue("@hLastName", paramValue2);
+                    //    int numberOfUpdations = command.ExecuteNonQuery();
+                    //}
                 }
                 catch (Exception ex)
                 {

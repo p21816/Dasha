@@ -47,6 +47,14 @@ namespace PeoplePhonesADOnet
             set { phone = value; }
         }
 
+        public Human(int a, string b , string c, string d)
+        {
+            Id = a;
+            FirstName = b;
+            LastName = c;
+            Phone = d;
+        }
+
          public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {

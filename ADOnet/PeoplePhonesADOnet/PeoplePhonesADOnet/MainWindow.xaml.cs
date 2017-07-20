@@ -24,9 +24,8 @@ namespace PeoplePhonesADOnet
         public MainWindow()
         {
             InitializeComponent();
-            Model.PeopleData = c.getInfoFromDataBase();
-            PeoplePhonesDatagrid.ItemsSource = Model.PeopleData;
-            //this.DataContext = Model.PeopleData;
+            Model.Instance.PeopleData = c.getInfoFromDataBase();
+            this.DataContext = Model.Instance;
 
         }
 
@@ -35,5 +34,6 @@ namespace PeoplePhonesADOnet
             c.setInfoToDataBase();
             System.Windows.Application.Current.Shutdown();
         }
+        
     }
 }
