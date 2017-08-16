@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace datdagridWPF_connected_to_database_through_ADOnet
 {
-    public class HotelDescription : INotifyPropertyChanged
+    public class HotelDescription 
     {
         private int id;
         public int Id1
