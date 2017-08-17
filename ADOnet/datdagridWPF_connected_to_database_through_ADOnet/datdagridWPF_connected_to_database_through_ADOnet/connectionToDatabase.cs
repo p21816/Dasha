@@ -32,7 +32,6 @@ namespace datdagridWPF_connected_to_database_through_ADOnet
 
                 using (connection)
                 {
-
                     try
                     {
                         connection.Open();
