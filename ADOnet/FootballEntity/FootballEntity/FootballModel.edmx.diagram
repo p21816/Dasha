@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ab143cff5b84f11bd73d4f4fbb833d3" Name="Diagram1">
+        <EntityTypeShape EntityType="FootballModel.Competition" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.CompetitionWinner" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.Country" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.FootballClub" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.InjuryHistory" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.Player" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.TransfersHistory" Width="1.5" PointX="11.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.Infirmary" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="FootballModel.fk_competition" ManuallyRouted="false" />
+        <AssociationConnector Association="FootballModel.fk_winner" ManuallyRouted="false" />
+        <AssociationConnector Association="FootballModel.fk_country" ManuallyRouted="false" />
+        <AssociationConnector Association="FootballModel.fk_club" ManuallyRouted="false" />
+        <AssociationConnector Association="FootballModel.fk_fromClub" ManuallyRouted="false" />
+        <AssociationConnector Association="FootballModel.fk_toClub" ManuallyRouted="false" />
+        <AssociationConnector Association="FootballModel.fk_player4" ManuallyRouted="false" />
+        <AssociationConnector Association="FootballModel.fk_player3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

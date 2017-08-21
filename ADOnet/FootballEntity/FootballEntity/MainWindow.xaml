@@ -1,0 +1,36 @@
+﻿<Window x:Class="FootballEntity.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="850" Width="725">
+    <StackPanel>
+        <Label Content="Победители:" ></Label>
+        <DataGrid x:Name="dg" AutoGenerateColumns="False" ColumnWidth ="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Team" Binding="{Binding FootballClub.name}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Date" Binding="{Binding finalDate}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Competition" Binding="{Binding Competition.name}">
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+                </DataGrid>
+        <Label Content="Добавить соревнование:"></Label>
+        <TextBox x:Name="addCompetitionTextBox"></TextBox>
+        <Label Content="Добавить id соревнования:"></Label>
+        <TextBox x:Name="addCompetitionIdTextBox"></TextBox>
+        <Button Content="Сохранить" Click="Button_Click"></Button>
+        <Label Content="Соревнования: "></Label>
+        <DataGrid x:Name="dgComp" ColumnWidth ="*">
+            <DataGrid.Columns >
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Margin="15" Content="Добавить победителя соревнования:"></Label>
+        <ComboBox x:Name="TeamsComboBox">
+        </ComboBox>
+        <TextBox></TextBox>
+        <Label Content="Выбрать соревнование: "></Label>
+        <ComboBox>
+            <TextBlock>1</TextBlock>
+            <TextBlock>2</TextBlock>
+            <TextBlock>3</TextBlock>
+        </ComboBox>
+    </StackPanel>
+</Window>

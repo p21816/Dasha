@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FootballModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Competition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="img" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CompetitionWinners">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="idCompetition" Type="int" Nullable="false" />
+          <Property Name="finalDate" Type="date" Nullable="false" />
+          <Property Name="idWinner" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="img" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FootballClub">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="stadium" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="foundation" Type="date" Nullable="false" />
+          <Property Name="country" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="city" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="img" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="InjuryHistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="idPlayer" Type="int" Nullable="false" />
+          <Property Name="dateFrom" Type="date" Nullable="false" />
+          <Property Name="dateTo" Type="date" />
+          <Property Name="description" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="lname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="born" Type="date" Nullable="false" />
+          <Property Name="position" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="idCountry" Type="int" Nullable="false" />
+          <Property Name="idClub" Type="int" />
+          <Property Name="img" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TransfersHistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="fromId" Type="int" />
+          <Property Name="toId" Type="int" Nullable="false" />
+          <Property Name="playerId" Type="int" Nullable="false" />
+          <Property Name="transferDate" Type="date" Nullable="false" />
+          <Property Name="price" Type="money" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Football.dbo.Infirmary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Infirmary">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="fname" />
+            <PropertyRef Name="lname" />
+            <PropertyRef Name="position" />
+            <PropertyRef Name="dateFrom" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="lname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="position" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="dateFrom" Type="date" Nullable="false" />
+          <Property Name="dateTo" Type="date" />
+          <Property Name="description" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="fk_club">
+          <End Role="FootballClub" Type="Self.FootballClub" Multiplicity="0..1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FootballClub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="idClub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_competition">
+          <End Role="Competition" Type="Self.Competition" Multiplicity="1" />
+          <End Role="CompetitionWinners" Type="Self.CompetitionWinners" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Competition">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CompetitionWinners">
+              <PropertyRef Name="idCompetition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="idCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fromClub">
+          <End Role="FootballClub" Type="Self.FootballClub" Multiplicity="0..1" />
+          <End Role="TransfersHistory" Type="Self.TransfersHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FootballClub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TransfersHistory">
+              <PropertyRef Name="fromId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_player3">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="TransfersHistory" Type="Self.TransfersHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TransfersHistory">
+              <PropertyRef Name="playerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_player4">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="InjuryHistory" Type="Self.InjuryHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="InjuryHistory">
+              <PropertyRef Name="idPlayer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_toClub">
+          <End Role="FootballClub" Type="Self.FootballClub" Multiplicity="1" />
+          <End Role="TransfersHistory" Type="Self.TransfersHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FootballClub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TransfersHistory">
+              <PropertyRef Name="toId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_winner">
+          <End Role="FootballClub" Type="Self.FootballClub" Multiplicity="1" />
+          <End Role="CompetitionWinners" Type="Self.CompetitionWinners" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FootballClub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CompetitionWinners">
+              <PropertyRef Name="idWinner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_footballTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="team" Type="nvarchar(max)" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="fname" Type="nvarchar" MaxLength="100" Nullable="false" />
+                <Property Name="lname" Type="nvarchar" MaxLength="100" Nullable="false" />
+                <Property Name="born" Type="date" Nullable="false" />
+                <Property Name="position" Type="nvarchar" MaxLength="100" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="FootballModelStoreContainer">
+          <EntitySet Name="Competition" EntityType="Self.Competition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompetitionWinners" EntityType="Self.CompetitionWinners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FootballClub" EntityType="Self.FootballClub" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InjuryHistory" EntityType="Self.InjuryHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransfersHistory" EntityType="Self.TransfersHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Infirmary" EntityType="Self.Infirmary" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Infirmary].[id] AS [id], 
+    [Infirmary].[fname] AS [fname], 
+    [Infirmary].[lname] AS [lname], 
+    [Infirmary].[position] AS [position], 
+    [Infirmary].[dateFrom] AS [dateFrom], 
+    [Infirmary].[dateTo] AS [dateTo], 
+    [Infirmary].[description] AS [description]
+    FROM [dbo].[Infirmary] AS [Infirmary]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="fk_club" Association="Self.fk_club">
+            <End Role="FootballClub" EntitySet="FootballClub" />
+            <End Role="Player" EntitySet="Player" />
+          </AssociationSet>
+          <AssociationSet Name="fk_competition" Association="Self.fk_competition">
+            <End Role="Competition" EntitySet="Competition" />
+            <End Role="CompetitionWinners" EntitySet="CompetitionWinners" />
+          </AssociationSet>
+          <AssociationSet Name="fk_country" Association="Self.fk_country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Player" EntitySet="Player" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fromClub" Association="Self.fk_fromClub">
+            <End Role="FootballClub" EntitySet="FootballClub" />
+            <End Role="TransfersHistory" EntitySet="TransfersHistory" />
+          </AssociationSet>
+          <AssociationSet Name="fk_player3" Association="Self.fk_player3">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="TransfersHistory" EntitySet="TransfersHistory" />
+          </AssociationSet>
+          <AssociationSet Name="fk_player4" Association="Self.fk_player4">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="InjuryHistory" EntitySet="InjuryHistory" />
+          </AssociationSet>
+          <AssociationSet Name="fk_toClub" Association="Self.fk_toClub">
+            <End Role="FootballClub" EntitySet="FootballClub" />
+            <End Role="TransfersHistory" EntitySet="TransfersHistory" />
+          </AssociationSet>
+          <AssociationSet Name="fk_winner" Association="Self.fk_winner">
+            <End Role="FootballClub" EntitySet="FootballClub" />
+            <End Role="CompetitionWinners" EntitySet="CompetitionWinners" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FootballModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="fn_footballTeam_Result">
+          <Property Name="fname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="born" Type="DateTime" Nullable="false" />
+          <Property Name="position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Competition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CompetitionWinners" Relationship="Self.fk_competition" FromRole="Competition" ToRole="CompetitionWinners" />
+        </EntityType>
+        <EntityType Name="CompetitionWinner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="idCompetition" Type="Int32" Nullable="false" />
+          <Property Name="finalDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="idWinner" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Competition" Relationship="Self.fk_competition" FromRole="CompetitionWinners" ToRole="Competition" />
+          <NavigationProperty Name="FootballClub" Relationship="Self.fk_winner" FromRole="CompetitionWinners" ToRole="FootballClub" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Players" Relationship="Self.fk_country" FromRole="Country" ToRole="Player" />
+        </EntityType>
+        <EntityType Name="FootballClub">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="stadium" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="foundation" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CompetitionWinners" Relationship="Self.fk_winner" FromRole="FootballClub" ToRole="CompetitionWinners" />
+          <NavigationProperty Name="Players" Relationship="Self.fk_club" FromRole="FootballClub" ToRole="Player" />
+          <NavigationProperty Name="TransfersHistories" Relationship="Self.fk_fromClub" FromRole="FootballClub" ToRole="TransfersHistory" />
+          <NavigationProperty Name="TransfersHistories1" Relationship="Self.fk_toClub" FromRole="FootballClub" ToRole="TransfersHistory" />
+        </EntityType>
+        <EntityType Name="InjuryHistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="idPlayer" Type="Int32" Nullable="false" />
+          <Property Name="dateFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dateTo" Type="DateTime" Precision="0" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Player" Relationship="Self.fk_player4" FromRole="InjuryHistory" ToRole="Player" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="born" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idCountry" Type="Int32" Nullable="false" />
+          <Property Name="idClub" Type="Int32" />
+          <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Country" Relationship="Self.fk_country" FromRole="Player" ToRole="Country" />
+          <NavigationProperty Name="FootballClub" Relationship="Self.fk_club" FromRole="Player" ToRole="FootballClub" />
+          <NavigationProperty Name="InjuryHistories" Relationship="Self.fk_player4" FromRole="Player" ToRole="InjuryHistory" />
+          <NavigationProperty Name="TransfersHistories" Relationship="Self.fk_player3" FromRole="Player" ToRole="TransfersHistory" />
+        </EntityType>
+        <EntityType Name="TransfersHistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="fromId" Type="Int32" />
+          <Property Name="toId" Type="Int32" Nullable="false" />
+          <Property Name="playerId" Type="Int32" Nullable="false" />
+          <Property Name="transferDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="FootballClub" Relationship="Self.fk_fromClub" FromRole="TransfersHistory" ToRole="FootballClub" />
+          <NavigationProperty Name="FootballClub1" Relationship="Self.fk_toClub" FromRole="TransfersHistory" ToRole="FootballClub" />
+          <NavigationProperty Name="Player" Relationship="Self.fk_player3" FromRole="TransfersHistory" ToRole="Player" />
+        </EntityType>
+        <EntityType Name="Infirmary">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="fname" />
+            <PropertyRef Name="lname" />
+            <PropertyRef Name="position" />
+            <PropertyRef Name="dateFrom" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dateFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dateTo" Type="DateTime" Precision="0" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="fk_competition">
+          <End Role="Competition" Type="Self.Competition" Multiplicity="1" />
+          <End Role="CompetitionWinners" Type="Self.CompetitionWinner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Competition">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CompetitionWinners">
+              <PropertyRef Name="idCompetition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_winner">
+          <End Role="FootballClub" Type="Self.FootballClub" Multiplicity="1" />
+          <End Role="CompetitionWinners" Type="Self.CompetitionWinner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FootballClub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CompetitionWinners">
+              <PropertyRef Name="idWinner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="idCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_club">
+          <End Role="FootballClub" Type="Self.FootballClub" Multiplicity="0..1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FootballClub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="idClub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fromClub">
+          <End Role="FootballClub" Type="Self.FootballClub" Multiplicity="0..1" />
+          <End Role="TransfersHistory" Type="Self.TransfersHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FootballClub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TransfersHistory">
+              <PropertyRef Name="fromId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_toClub">
+          <End Role="FootballClub" Type="Self.FootballClub" Multiplicity="1" />
+          <End Role="TransfersHistory" Type="Self.TransfersHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FootballClub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TransfersHistory">
+              <PropertyRef Name="toId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_player4">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="InjuryHistory" Type="Self.InjuryHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="InjuryHistory">
+              <PropertyRef Name="idPlayer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_player3">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="TransfersHistory" Type="Self.TransfersHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TransfersHistory">
+              <PropertyRef Name="playerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FootballEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Competitions" EntityType="Self.Competition" />
+          <EntitySet Name="CompetitionWinners" EntityType="Self.CompetitionWinner" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="FootballClubs" EntityType="Self.FootballClub" />
+          <EntitySet Name="InjuryHistories" EntityType="Self.InjuryHistory" />
+          <EntitySet Name="Players" EntityType="Self.Player" />
+          <EntitySet Name="TransfersHistories" EntityType="Self.TransfersHistory" />
+          <EntitySet Name="Infirmaries" EntityType="Self.Infirmary" />
+          <AssociationSet Name="fk_competition" Association="Self.fk_competition">
+            <End Role="Competition" EntitySet="Competitions" />
+            <End Role="CompetitionWinners" EntitySet="CompetitionWinners" />
+          </AssociationSet>
+          <AssociationSet Name="fk_winner" Association="Self.fk_winner">
+            <End Role="FootballClub" EntitySet="FootballClubs" />
+            <End Role="CompetitionWinners" EntitySet="CompetitionWinners" />
+          </AssociationSet>
+          <AssociationSet Name="fk_country" Association="Self.fk_country">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Player" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="fk_club" Association="Self.fk_club">
+            <End Role="FootballClub" EntitySet="FootballClubs" />
+            <End Role="Player" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fromClub" Association="Self.fk_fromClub">
+            <End Role="FootballClub" EntitySet="FootballClubs" />
+            <End Role="TransfersHistory" EntitySet="TransfersHistories" />
+          </AssociationSet>
+          <AssociationSet Name="fk_toClub" Association="Self.fk_toClub">
+            <End Role="FootballClub" EntitySet="FootballClubs" />
+            <End Role="TransfersHistory" EntitySet="TransfersHistories" />
+          </AssociationSet>
+          <AssociationSet Name="fk_player4" Association="Self.fk_player4">
+            <End Role="Player" EntitySet="Players" />
+            <End Role="InjuryHistory" EntitySet="InjuryHistories" />
+          </AssociationSet>
+          <AssociationSet Name="fk_player3" Association="Self.fk_player3">
+            <End Role="Player" EntitySet="Players" />
+            <End Role="TransfersHistory" EntitySet="TransfersHistories" />
+          </AssociationSet>
+          <FunctionImport Name="fn_footballTeam" ReturnType="Collection(FootballModel.fn_footballTeam_Result)" IsComposable="true">
+            <Parameter Name="team" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FootballModelStoreContainer" CdmEntityContainer="FootballEntities">
+          <EntitySetMapping Name="Competitions">
+            <EntityTypeMapping TypeName="FootballModel.Competition">
+              <MappingFragment StoreEntitySet="Competition">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="img" ColumnName="img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompetitionWinners">
+            <EntityTypeMapping TypeName="FootballModel.CompetitionWinner">
+              <MappingFragment StoreEntitySet="CompetitionWinners">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCompetition" ColumnName="idCompetition" />
+                <ScalarProperty Name="finalDate" ColumnName="finalDate" />
+                <ScalarProperty Name="idWinner" ColumnName="idWinner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="FootballModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="img" ColumnName="img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FootballClubs">
+            <EntityTypeMapping TypeName="FootballModel.FootballClub">
+              <MappingFragment StoreEntitySet="FootballClub">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="stadium" ColumnName="stadium" />
+                <ScalarProperty Name="foundation" ColumnName="foundation" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="img" ColumnName="img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InjuryHistories">
+            <EntityTypeMapping TypeName="FootballModel.InjuryHistory">
+              <MappingFragment StoreEntitySet="InjuryHistory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idPlayer" ColumnName="idPlayer" />
+                <ScalarProperty Name="dateFrom" ColumnName="dateFrom" />
+                <ScalarProperty Name="dateTo" ColumnName="dateTo" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="FootballModel.Player">
+              <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="born" ColumnName="born" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="idCountry" ColumnName="idCountry" />
+                <ScalarProperty Name="idClub" ColumnName="idClub" />
+                <ScalarProperty Name="img" ColumnName="img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransfersHistories">
+            <EntityTypeMapping TypeName="FootballModel.TransfersHistory">
+              <MappingFragment StoreEntitySet="TransfersHistory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fromId" ColumnName="fromId" />
+                <ScalarProperty Name="toId" ColumnName="toId" />
+                <ScalarProperty Name="playerId" ColumnName="playerId" />
+                <ScalarProperty Name="transferDate" ColumnName="transferDate" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Infirmaries">
+            <EntityTypeMapping TypeName="FootballModel.Infirmary">
+              <MappingFragment StoreEntitySet="Infirmary">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="dateFrom" ColumnName="dateFrom" />
+                <ScalarProperty Name="dateTo" ColumnName="dateTo" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionName="FootballModel.Store.fn_footballTeam" FunctionImportName="fn_footballTeam">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FootballModel.fn_footballTeam_Result">
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="born" ColumnName="born" />
+                <ScalarProperty Name="position" ColumnName="position" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
