@@ -92,6 +92,7 @@
     <Compile Include="Message.cs">
       <DependentUpon>BankTransfersModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model.cs" />
     <Compile Include="PaymentMessage.cs">
       <DependentUpon>BankTransfersModel.tt</DependentUpon>
     </Compile>

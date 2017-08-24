@@ -1,0 +1,23 @@
+﻿<Window x:Class="BT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <StackPanel>
+        <DataGrid x:Name="dg">
+        </DataGrid>
+        <Label Content="Перевод денежных средств" ></Label>
+        <StackPanel>
+            <Label Content="Введите ID банка получателя:"></Label>
+            <TextBox x:Name="RecBankIdTextBox"></TextBox>
+            <Label Content="Введите номер счета получателя:"></Label>
+            <TextBox x:Name="RecieverNumTextBox"></TextBox>
+            <Label Content="Введите номер счета отправителя:"></Label>
+            <TextBox x:Name="SenderNumTextBox"></TextBox>
+            <Label Content="Введите сумму:"></Label>
+            <TextBox x:Name="SumTextBox"></TextBox>
+            <Button Content="Перевести" Click="Button_Click"></Button>
+        </StackPanel>
+        <DataGrid x:Name="dg1">
+        </DataGrid>
+    </StackPanel>
+</Window>
