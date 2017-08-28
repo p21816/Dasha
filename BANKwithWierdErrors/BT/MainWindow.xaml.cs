@@ -23,44 +23,44 @@ namespace BT
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        int LastProcessedId = Convert.ToInt32( ConfigurationManager.AppSettings["LastProcessedId"] ?? "0"); // 14 тестовых записей уже есть
-
         public MainWindow()
         {
             InitializeComponent();
-            DispatcherTimer dt = new DispatcherTimer();
-            dt.Interval = new TimeSpan(0,0,2);
-            dt.Tick += dt_Tick;
-            dt.Start();
+            AddUpdateAppSettings("LastProcessedId", "13");
+            int LastProcessedId = Convert.ToInt32( ConfigurationManager.AppSettings["LastProcessedId"] ?? "0");
+            //ReadAllSettings();
+            MessageBox.Show(LastProcessedId.ToString());
+
+            //DispatcherTimer dt = new DispatcherTimer();
+            //dt.Interval = new TimeSpan(0,0,2);
+            //dt.Tick += dt_Tick;
+            //dt.Start();
         }
 
        static public BankTransfersModelContainer conn = new BankTransfersModelContainer();
        static public DashkasBankEntities DashkConn = new DashkasBankEntities();
 
-        void dt_Tick(object sender, EventArgs e)
-        {
-           conn.MessageSet.Load();
+        //void dt_Tick(object sender, EventArgs e)
+        //{
+        //   conn.MessageSet.Load();
 
-           AddUpdateAppSettings("LastProcessedId", "12");
-           return;
+        //   AddUpdateAppSettings("LastProcessedId", "12");
+        //   return;
 
-           var messages = from m in conn.MessageSet.Local where m.RecieverBankId == 42 && m.Id > LastProcessedId select m;
-           foreach(var m in messages)
-           {
-               m.Process();
-               LastProcessedId = m.Id;
-
-               
-           }
-        }
+        //   var messages = from m in conn.MessageSet.Local where m.RecieverBankId == 42 && m.Id > LastProcessedId select m;
+        //   foreach(var m in messages)
+        //   {
+        //       m.Process();
+        //       LastProcessedId = m.Id;
+        //   }
+        //}
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            conn.MessageSet.Load();
-            DashkConn.Account.Load();
-            dg.ItemsSource = DashkConn.Account.Local;
-            dg1.ItemsSource = conn.MessageSet.Local;
+            //conn.MessageSet.Load();
+            //DashkConn.Account.Load();
+            //dg.ItemsSource = DashkConn.Account.Local;
+            //dg1.ItemsSource = conn.MessageSet.Local;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -71,16 +71,7 @@ namespace BT
                 Amount = Convert.ToInt32(SumTextBox.Text) , SenderBankId = 42 
         };
             conn.MessageSet.Add(pm);
-            conn.SaveChanges();
-        }
-
-
-
-
-
-        static MainWindow()
-        {
-            ReadAllSettings();
+            //conn.SaveChanges();
         }
 
 
@@ -99,7 +90,9 @@ namespace BT
                 {
                     foreach (var key in appSettings.AllKeys)
                     {
-                        Console.WriteLine("Key: {0} Value: {1}", key, appSettings[key]);
+                        //Console.WriteLine("Key: {0} Value: {1}", key, appSettings[key]);
+                        string str = "Key: {0} Value: {1} " + key + appSettings[key];
+                        MessageBox.Show(str);
                     }
                 }
             }
@@ -119,7 +112,7 @@ namespace BT
             }
             catch (ConfigurationErrorsException)
             {
-                Console.WriteLine("Error reading app settings");
+                MessageBox.Show("Error reading app settings");
             }
         }
 
