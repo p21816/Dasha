@@ -28,12 +28,14 @@ public partial class PaymentMessage : Message
 {
     public override void Process()
     {
-        //MessageBox.Show("получил деньги");
+        MessageBox.Show("получил деньги");
+
         MainWindow.DashkConn.Account.Load();
         var account = (from a in MainWindow.DashkConn.Account where a.AccountNumber == RecieverAccountId select a).FirstOrDefault();
         if (account != null)
         {
-            account.Amount += Amount;
+            account.Amount = 200;
+            //account.Amount += Amount;
             ResultMessage rm = new ResultMessage() { RecieverBankId = SenderAccountId, Related = this, ResultCode = PaymentResult.OK, SenderBankId = 42 };
         }
         else
@@ -41,7 +43,6 @@ public partial class PaymentMessage : Message
             ResultMessage rm = new ResultMessage() { RecieverBankId = SenderAccountId, Related = this, ResultCode = PaymentResult.InvalidAccount, SenderBankId = 42 };
         }
         MainWindow.DashkConn.SaveChanges();
-
     }
 }
 public partial class ResultMessage : Message
