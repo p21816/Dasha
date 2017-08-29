@@ -16,43 +16,54 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using BT;
-public partial class Message
-{
-    virtual public void Process()
-    {
-        throw new InvalidOperationException("не могу обработать абстрактное сообщение");
-    }
-}
 
-public partial class PaymentMessage : Message
+namespace BT
 {
-    public override void Process()
-    {
-        MessageBox.Show("получил деньги");
 
-        MainWindow.DashkConn.Account.Load();
-        var account = (from a in MainWindow.DashkConn.Account where a.AccountNumber == RecieverAccountId select a).FirstOrDefault();
-        if (account != null)
+    public partial class Message
+    {
+        virtual public void Process()
         {
-            account.Amount = 200;
-            //account.Amount += Amount;
-            ResultMessage rm = new ResultMessage() { RecieverBankId = SenderAccountId, Related = this, ResultCode = PaymentResult.OK, SenderBankId = 42 };
+            throw new InvalidOperationException("не могу обработать абстрактное сообщение");
         }
-        else
-        {
-            ResultMessage rm = new ResultMessage() { RecieverBankId = SenderAccountId, Related = this, ResultCode = PaymentResult.InvalidAccount, SenderBankId = 42 };
-        }
-        MainWindow.DashkConn.SaveChanges();
     }
-}
-public partial class ResultMessage : Message
-{
-    public override void Process()
+
+    public partial class PaymentMessage : Message
     {
-        MessageBox.Show("банк ответил");
+        public override void Process()
+        {
+            MessageBox.Show("получил деньги");
+
+            MainWindow.DashkConn.Account.Load();
+            var account = (from a in MainWindow.DashkConn.Account where a.AccountNumber == RecieverAccountId select a).FirstOrDefault();
+            if (account != null)
+            {
+                account.Amount += Amount;
+                ResultMessage rm = new ResultMessage() {  RecieverBankId = 42, Related = this, ResultCode = PaymentResult.OK, SenderBankId = 42 };
+                //MainWindow.conn.Database.Log += (i) => { MessageBox.Show(i); };
+                MainWindow.conn.MessageSet.Add(rm);
+            }
+            else
+            {
+                ResultMessage rm = new ResultMessage() { RecieverBankId = SenderAccountId, Related = this, ResultCode = PaymentResult.InvalidAccount, SenderBankId = 42 };
+                //MainWindow.conn.MessageSet.Add(rm);
+            }
+            //var items = (from i in MainWindow.conn.MessageSet.OfType<ResultMessage>() where i.Id == 1071 select i).Count();
+            MainWindow.DashkConn.SaveChanges();
+            MainWindow.conn.SaveChanges();
+        }
     }
+    public partial class ResultMessage : Message
+    {
+        public override void Process()
+        {
+            MessageBox.Show("банк ответил");
+            //string res = this.ResultCode.ToString();
+            //MessageBox.Show(res);
+        }
+    }
+
+
+
+
 }
-
-
-
-

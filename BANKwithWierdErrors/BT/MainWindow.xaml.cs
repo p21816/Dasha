@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Configuration;
+using System.Threading;
 
 namespace BT
 {
@@ -23,44 +24,48 @@ namespace BT
     /// </summary>
     public partial class MainWindow : Window
     {
+        int LastProcessedId;
         public MainWindow()
         {
             InitializeComponent();
-            AddUpdateAppSettings("LastProcessedId", "13");
-            int LastProcessedId = Convert.ToInt32( ConfigurationManager.AppSettings["LastProcessedId"] ?? "0");
-            //ReadAllSettings();
+            LastProcessedId = Convert.ToInt32( ConfigurationManager.AppSettings["LastProcessedId"] ?? "0");
             MessageBox.Show(LastProcessedId.ToString());
 
-            //DispatcherTimer dt = new DispatcherTimer();
-            //dt.Interval = new TimeSpan(0,0,2);
-            //dt.Tick += dt_Tick;
-            //dt.Start();
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = new TimeSpan(0, 0, 2);
+            dt.Tick += dt_Tick;
+            dt.Start();
         }
 
        static public BankTransfersModelContainer conn = new BankTransfersModelContainer();
        static public DashkasBankEntities DashkConn = new DashkasBankEntities();
 
-        //void dt_Tick(object sender, EventArgs e)
-        //{
-        //   conn.MessageSet.Load();
+       void dt_Tick(object sender, EventArgs e)
+       {
+          // conn.MessageSet.Load();
+           var messages = from m in conn.MessageSet where (m.RecieverBankId == 42 && m.Id > LastProcessedId)  select m;
+           messages.Load();
+           foreach (var m in messages)
+           {
+               m.Process();
+               LastProcessedId = m.Id;
+               AddUpdateAppSettings("LastProcessedId", LastProcessedId.ToString());
+           }
 
-        //   AddUpdateAppSettings("LastProcessedId", "12");
-        //   return;
+           //var resMessages = from m in conn.MessageSet.Local where m is ResultMessage select m;
+           //foreach (var m in messages)
+           //{
+           //    m.Process();
+           //}
 
-        //   var messages = from m in conn.MessageSet.Local where m.RecieverBankId == 42 && m.Id > LastProcessedId select m;
-        //   foreach(var m in messages)
-        //   {
-        //       m.Process();
-        //       LastProcessedId = m.Id;
-        //   }
-        //}
+       }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //conn.MessageSet.Load();
-            //DashkConn.Account.Load();
-            //dg.ItemsSource = DashkConn.Account.Local;
-            //dg1.ItemsSource = conn.MessageSet.Local;
+            conn.MessageSet.Load();
+            DashkConn.Account.Load();
+            dg.ItemsSource = DashkConn.Account.Local;
+            dg1.ItemsSource = conn.MessageSet.Local;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -71,7 +76,7 @@ namespace BT
                 Amount = Convert.ToInt32(SumTextBox.Text) , SenderBankId = 42 
         };
             conn.MessageSet.Add(pm);
-            //conn.SaveChanges();
+            conn.SaveChanges();
         }
 
 
@@ -138,12 +143,6 @@ namespace BT
                 Console.WriteLine("Error writing app settings");
             }
         }
-
-
-
-
-
-
 
 
     }

@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="BankTransfersModel.Message" Width="1.5" PointX="3.125" PointY="1.25" />
         <EntityTypeShape EntityType="BankTransfersModel.PaymentMessage" Width="1.5" PointX="2.5" PointY="4" />
         <InheritanceConnector EntityType="BankTransfersModel.PaymentMessage" />
-        <EntityTypeShape EntityType="BankTransfersModel.ResultMessage" Width="1.5" PointX="5.75" PointY="3.625" />
+        <EntityTypeShape EntityType="BankTransfersModel.ResultMessage" Width="1.5" PointX="4.5" PointY="4" />
         <InheritanceConnector EntityType="BankTransfersModel.ResultMessage" />
         <AssociationConnector Association="BankTransfersModel.MessageResultMessage" />
       </Diagram>

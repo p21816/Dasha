@@ -105,7 +105,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SenderBankId" Type="Int32" Nullable="false" />
           <Property Name="RecieverBankId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ResultMessage1" Relationship="BankTransfersModel.MessageResultMessage" FromRole="Message" ToRole="ResultMessage" />
         </EntityType>
         <EntityType Name="PaymentMessage" BaseType="BankTransfersModel.Message" >
           <Property Name="SenderAccountId" Type="Int32" Nullable="false" />

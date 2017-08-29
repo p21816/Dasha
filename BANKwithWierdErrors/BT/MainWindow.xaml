@@ -17,7 +17,7 @@
             <TextBox x:Name="SumTextBox"></TextBox>
             <Button Content="Перевести" Click="Button_Click"></Button>
         </StackPanel>
-        <DataGrid x:Name="dg1">
+        <DataGrid x:Name="dg1" VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" Height="230">
         </DataGrid>
     </StackPanel>
 </Window>
