@@ -32,23 +32,30 @@ namespace BT
     {
         public override void Process()
         {
-            MessageBox.Show("получил деньги");
-
+            //MessageBox.Show("получил деньги");
+            List<ResultMessage> resMessages = new List<ResultMessage>();
             MainWindow.DashkConn.Account.Load();
             var account = (from a in MainWindow.DashkConn.Account where a.AccountNumber == RecieverAccountId select a).FirstOrDefault();
+
             if (account != null)
             {
                 account.Amount += Amount;
-                ResultMessage rm = new ResultMessage() {  RecieverBankId = 42, Related = this, ResultCode = PaymentResult.OK, SenderBankId = 42 };
+                ResultMessage rm = new ResultMessage() { RecieverBankId = this.SenderBankId, Related = this, ResultCode = PaymentResult.OK, SenderBankId = 42 };
                 //MainWindow.conn.Database.Log += (i) => { MessageBox.Show(i); };
-                MainWindow.conn.MessageSet.Add(rm);
+                resMessages.Add(rm);
             }
             else
             {
-                ResultMessage rm = new ResultMessage() { RecieverBankId = SenderAccountId, Related = this, ResultCode = PaymentResult.InvalidAccount, SenderBankId = 42 };
-                //MainWindow.conn.MessageSet.Add(rm);
+                ResultMessage rm = new ResultMessage() { RecieverBankId = this.SenderBankId, Related = this, ResultCode = PaymentResult.InvalidAccount, SenderBankId = 42 };
+                resMessages.Add(rm);
             }
+            
+
             //var items = (from i in MainWindow.conn.MessageSet.OfType<ResultMessage>() where i.Id == 1071 select i).Count();
+            foreach(var r in resMessages)
+            {
+                MainWindow.conn.MessageSet.Add(r);
+            }
             MainWindow.DashkConn.SaveChanges();
             MainWindow.conn.SaveChanges();
         }
@@ -57,9 +64,38 @@ namespace BT
     {
         public override void Process()
         {
-            MessageBox.Show("банк ответил");
-            //string res = this.ResultCode.ToString();
-            //MessageBox.Show(res);
+            //MessageBox.Show("банк ответил");
+
+            switch (ResultCode)
+            {
+                case PaymentResult.OK:
+                    {
+                        PaymentMessage pm = Related as PaymentMessage;
+                        var account = 
+                            (from a in MainWindow.DashkConn.Account 
+                             where a.AccountNumber == (pm).SenderAccountId
+                             select a)
+                            .FirstOrDefault();
+                        account.Amount -= (pm).Amount;
+                        MainWindow.DashkConn.SaveChanges();
+                        break;
+                    }
+                case PaymentResult.InvalidAccount:
+                        {
+                            MessageBox.Show("Test");
+                             break;
+                        }
+                case PaymentResult.NotEnoughFunds:
+                        {
+                            MessageBox.Show("Test");
+                            break;
+                        }
+                case PaymentResult.UnknownError:
+                        {
+                            MessageBox.Show("Test");
+                            break;
+                        }
+            }
         }
     }
 

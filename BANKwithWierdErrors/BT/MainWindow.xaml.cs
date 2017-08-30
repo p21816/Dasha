@@ -28,7 +28,7 @@ namespace BT
         public MainWindow()
         {
             InitializeComponent();
-            LastProcessedId = Convert.ToInt32( ConfigurationManager.AppSettings["LastProcessedId"] ?? "0");
+            LastProcessedId = Convert.ToInt32(ConfigurationManager.AppSettings["LastProcessedId"] ?? "0");
             MessageBox.Show(LastProcessedId.ToString());
 
             DispatcherTimer dt = new DispatcherTimer();
@@ -42,22 +42,13 @@ namespace BT
 
        void dt_Tick(object sender, EventArgs e)
        {
-          // conn.MessageSet.Load();
-           var messages = from m in conn.MessageSet where (m.RecieverBankId == 42 && m.Id > LastProcessedId)  select m;
-           messages.Load();
+           var messages = from m in conn.MessageSet where (m.RecieverBankId == 42 && m.Id > LastProcessedId) select m;
            foreach (var m in messages)
            {
-               m.Process();
-               LastProcessedId = m.Id;
-               AddUpdateAppSettings("LastProcessedId", LastProcessedId.ToString());
+                   m.Process();
+                   LastProcessedId = m.Id;
+                   AddUpdateAppSettings("LastProcessedId", LastProcessedId.ToString());
            }
-
-           //var resMessages = from m in conn.MessageSet.Local where m is ResultMessage select m;
-           //foreach (var m in messages)
-           //{
-           //    m.Process();
-           //}
-
        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -70,12 +61,18 @@ namespace BT
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-                PaymentMessage pm = new PaymentMessage() { RecieverBankId = Convert.ToInt32(RecBankIdTextBox.Text) , 
-                RecieverAccountId = Convert.ToInt32(RecieverNumTextBox.Text) , 
-                SenderAccountId =Convert.ToInt32(SenderNumTextBox.Text) , 
-                Amount = Convert.ToInt32(SumTextBox.Text) , SenderBankId = 42 
-        };
-            conn.MessageSet.Add(pm);
+            //for(int i = 0; i < 10; i++)
+            //{
+                PaymentMessage pm = new PaymentMessage()
+                {
+                    RecieverBankId = Convert.ToInt32(RecBankIdTextBox.Text),
+                    RecieverAccountId = Convert.ToInt32(RecieverNumTextBox.Text),
+                    SenderAccountId = Convert.ToInt32(SenderNumTextBox.Text),
+                    Amount = Convert.ToInt32(SumTextBox.Text),
+                    SenderBankId = 42
+                };
+                conn.MessageSet.Add(pm);
+            //}
             conn.SaveChanges();
         }
 
