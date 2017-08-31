@@ -25,7 +25,6 @@ namespace exPeoplePhones
             DbConnection connection = factory.CreateConnection();
             connection.ConnectionString = connectionString;
 
-
             using (connection)
             {
                 try
@@ -57,8 +56,4 @@ namespace exPeoplePhones
             return PhonesInfo;
         }
     }
-
-
 }
- //select a.Id, a.Firstname, a.Lastname, a.PersonalNumber from Phones b
- //      join People a on (b.people_id = a.Id) group by a.CathegoryName order by FrequencyQuery desc;
