@@ -1,0 +1,15 @@
+﻿<Window x:Class="CountersMaster.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <Button Click="Button_Click">New</Button>
+            <Button Click="KillButtonClick">Kill</Button>
+            <Button Click="ButtonPlus_Click"    >+</Button>
+            <Button Click="ButtonMinus_Click">-</Button>
+        </StackPanel>
+        <DataGrid x:Name="dg"></DataGrid>
+
+    </DockPanel>
+</Window>
