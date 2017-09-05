@@ -1,0 +1,12 @@
+﻿<Window x:Class="ThreadsDemoWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" FontSize="20">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Button  Content="Фибоначи в фоне" Click="Button_Click"/>
+            <Button Content="счётчики" Click="Button_Click_1" ></Button>
+        </StackPanel>
+        <ListBox x:Name="outBox"/>
+    </DockPanel>
+</Window>
