@@ -16,42 +16,42 @@ using System.Windows.Shapes;
 
 namespace ThreadsWPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    // вычисляем сумму чисел от 0 до 100 (должно получиться 5050)
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            long maxNumber = 1000000000;
             long res = 0;
 
+            //создаем объект класса sumTask и новый поток для каждого объекта
             sumTask s = new sumTask(0,25);
             Thread th = new Thread(s.Calculate);
 
-            sumTask s1 = new sumTask(25, 50);
+            sumTask s1 = new sumTask(26, 50);
             Thread th1 = new Thread(s1.Calculate);
 
-            sumTask s2 = new sumTask(50, 75);
+            sumTask s2 = new sumTask(51, 75);
             Thread th2 = new Thread(s2.Calculate);
 
-            sumTask s3 = new sumTask(75, 100);
+            sumTask s3 = new sumTask(76, 100);
             Thread th3 = new Thread(s3.Calculate);
 
+
+            //запускаем потоки
             th.Start();
-
             th1.Start();
-
             th2.Start();
-
             th3.Start();
 
+
+            //соединяем потоки с основным потоком
             th.Join();
             th1.Join();
             th2.Join();
             th3.Join();
 
+            //считаем сумму всех калькуляторов
             res = s.result + s1.result + s2.result + s3.result;
             MessageBox.Show(res.ToString());
 
@@ -61,6 +61,8 @@ namespace ThreadsWPF
 
     public class sumTask
     {
+
+        // в конструкторе инициализируем диапазон значений from , to
         public sumTask(long f, long t)
         {
             from = f;
@@ -68,6 +70,8 @@ namespace ThreadsWPF
         }
         public readonly long from, to;
         public long result { get; private set; }
+
+        //считаем сумму всех чисел в заданном в конструкторе диапазоне
         public void Calculate()
         {
             for (long i = from; i <= to; i++)
