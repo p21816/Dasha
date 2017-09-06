@@ -37,7 +37,6 @@ namespace ThreadsWPF
             sumTask s3 = new sumTask(76, 100);
             Thread th3 = new Thread(s3.Calculate);
 
-
             //запускаем потоки
             th.Start();
             th1.Start();
@@ -52,10 +51,9 @@ namespace ThreadsWPF
             th3.Join();
 
             //считаем сумму всех калькуляторов
+            l.Content = s.result + " " + s1.result + " " + s2.result + " " + s3.result;
             res = s.result + s1.result + s2.result + s3.result;
-            MessageBox.Show(res.ToString());
-
-
+            label.Content = res;
         }
     }
 
