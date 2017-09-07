@@ -1,0 +1,16 @@
+﻿<Window x:Class="RotatePixels.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <Button DockPanel.Dock="Top" Content="Do" Click="Button_Click"></Button>
+
+        <UniformGrid>
+        <Label>Before</Label>
+        <Label>After</Label>
+        <Image x:Name="BeforeImage"/>
+        <Image x:Name="AfterImage"/>
+        
+    </UniformGrid>
+    </DockPanel>
+   </Window>
