@@ -1,0 +1,13 @@
+﻿<Window x:Class="DllWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded"  >
+    <DockPanel>
+        <StackPanel x:Name="sp" Orientation="Horizontal" DockPanel.Dock="Top">
+            <Button Content="Exit"/>
+        </StackPanel>
+    <ListBox x:Name="lb">
+        
+    </ListBox>
+    </DockPanel>
+</Window>
