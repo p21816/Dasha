@@ -1,6 +1,9 @@
-﻿using System;
+﻿using PixelsRotateDll;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -24,7 +27,7 @@ namespace RotatePixels
     {
         const int ImageSize = 600 ;
         int scale = ImageSize/300;
-         double alpha = Math.PI / 4; //6.283185
+        double alpha = Math.PI / 4; //6.283185
 
 
         const uint White = 0xFFFFFFFF;
@@ -75,6 +78,32 @@ namespace RotatePixels
             alpha += 0.01;
         }
 
+
+        private void DrawPicture()
+        {
+            int width = 300;
+            int height = 300;
+
+            // Create a writeable bitmap (which is a valid WPF Image Source
+            WriteableBitmap bitmap = new WriteableBitmap(width, height, 96, 96, PixelFormats.Bgra32, null);
+
+            // Create an array of pixels to contain pixel color values
+            uint[] pixels = new uint[width * height];
+
+            for (int x = 0; x < 300; ++x)
+            {
+                for (int y = 0; y < 300; ++y)
+                {
+                    int i = width * (y) + x;
+                    pixels[i] = before[x * scale, y * scale];
+                }
+            }
+            // apply pixels to bitmap
+            bitmap.WritePixels(new Int32Rect(0, 0, 300, 300), pixels, width * 4, 0);
+
+            // set image source to the new bitmap
+            this.BeforeImage.Source = bitmap;
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -84,40 +113,68 @@ namespace RotatePixels
                 Interval = new TimeSpan(0, 0, 0, 0, 100),
                 IsEnabled = true,
             };
-            t.Tick += t_Tick;
+          //  t.Tick += t_Tick;
+            DrawPicture();
 
+            string[] pluginFiles =
+                Directory.GetFiles(@"D:\Plugins", @"*.dll");
 
-            int width = 300;
-            int height = 300;
-
-            // Create a writeable bitmap (which is a valid WPF Image Source
-            WriteableBitmap bitmap = new WriteableBitmap(width, height, 96, 96, PixelFormats.Bgra32, null);
-
-            // Create an array of pixels to contain pixel color values
-            uint[] pixels = new uint[width * height];
-
-  
-            for (int x = 0; x < 300; ++x)
+            List<DashkasPlugin> plugins = new List<DashkasPlugin>();
+            foreach (var file in pluginFiles)
             {
-                for (int y = 0; y < 300; ++y)
+                var asm = Assembly.LoadFile(file);
+                foreach (var type in asm.GetExportedTypes())
                 {
-                    int i = width * (y) + x;
-                    pixels[i] = before[x * scale, y * scale];
+                    if (typeof(DashkasPlugin).IsAssignableFrom(type))
+                    {
+                        plugins.Add(
+                            (DashkasPlugin)Activator.CreateInstance(type)
+                        );
+                    }
                 }
             }
 
-            
-            // apply pixels to bitmap
-            bitmap.WritePixels(new Int32Rect(0, 0, 300 , 300 ), pixels, width * 4, 0);
+            foreach (var plugin in plugins)
+            {
+                var btn = new Button()
+                {
+                    Content = plugin.GetButtonName()
+                };
+                btn.Click += (object sender, RoutedEventArgs e) =>
+                {
+                    plugin.Transform(before, after);
+                    // Create an array of pixels to contain pixel color values
+                    int width = 300;
+                    int height = 300;
 
-            // set image source to the new bitmap
-            this.BeforeImage.Source = bitmap;
-        
+                    // Create a writeable bitmap (which is a valid WPF Image Source
+                    WriteableBitmap bitmap = new WriteableBitmap(width, height, 96, 96, PixelFormats.Bgra32, null);
+
+                    // Create an array of pixels to contain pixel color values
+                    uint[] pixels = new uint[width * height];
+
+
+                    for (int x = 0; x < 300; ++x)
+                    {
+                        for (int y = 0; y < 300; ++y)
+                        {
+                            int i = width * (y) + x;
+                            pixels[i] = after[x * scale, y * scale];
+                        }
+                    }
+                    // apply pixels to bitmap
+                    bitmap.WritePixels(new Int32Rect(0, 0, 300, 300), pixels, width * 4, 0);
+
+                    // set image source to the new bitmap
+                    this.AfterImage.Source = bitmap;
+
+                };
+                sp.Children.Add(btn);
+            }
         }
 
         void t_Tick(object sender, EventArgs e)
         {
-            Rotate();
             // Create an array of pixels to contain pixel color values
             int width = 300;
             int height = 300;
@@ -127,7 +184,6 @@ namespace RotatePixels
 
             // Create an array of pixels to contain pixel color values
             uint[] pixels = new uint[width * height];
-
 
             for (int x = 0; x < 300; ++x)
             {
@@ -143,37 +199,6 @@ namespace RotatePixels
             // set image source to the new bitmap
             this.AfterImage.Source = bitmap;
             
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Rotate();
-            // Create an array of pixels to contain pixel color values
-            int width = 300 ;
-            int height = 300 ;
-
-            // Create a writeable bitmap (which is a valid WPF Image Source
-            WriteableBitmap bitmap = new WriteableBitmap(width, height, 96, 96, PixelFormats.Bgra32, null);
-
-            // Create an array of pixels to contain pixel color values
-            uint[] pixels = new uint[width * height];
-
-       
-            for (int x = 0; x < 300; ++x)
-            {
-                for (int y = 0; y < 300; ++y)
-                {
-                    int i = width * (y ) + x ;
-                    pixels[i] = after[x * scale, y * scale];
-                }
-            }
-
-
-            // apply pixels to bitmap
-            bitmap.WritePixels(new Int32Rect(0, 0, 300 , 300 ), pixels, width * 4, 0);
-
-            // set image source to the new bitmap
-            this.AfterImage.Source = bitmap;
         }
     }
 }

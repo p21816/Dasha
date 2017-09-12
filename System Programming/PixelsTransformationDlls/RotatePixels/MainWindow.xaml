@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <DockPanel>
-        <Button DockPanel.Dock="Top" Content="Do" Click="Button_Click"></Button>
-
+        <StackPanel x:Name="sp" DockPanel.Dock="Top">
+        </StackPanel>
         <UniformGrid>
         <Label>Before</Label>
         <Label>After</Label>
