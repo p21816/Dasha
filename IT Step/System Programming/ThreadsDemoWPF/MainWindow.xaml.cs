@@ -121,7 +121,6 @@ namespace ThreadsDemoWPF
             t2.Join();
             
             sl.Add(String.Format("time = {0:#.##} res = {1}", (DateTime.Now - start).TotalSeconds,counter));
-
         }
     }
 

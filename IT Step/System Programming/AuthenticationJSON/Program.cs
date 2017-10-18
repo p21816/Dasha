@@ -109,11 +109,11 @@ namespace Authentication
                 string responseString = "";
                 if (request.RawUrl == "/files")
                 {
-                    responseString = File.ReadAllText(@"d:\jsonSender.html");
+                    responseString = File.ReadAllText(@"C:\Users\Дарья\Desktop\git\Dasha\System Programming\jsonSender.html");
                 }
                 else if (request.RawUrl == "/files/jsonSender.js")
                 {
-                    responseString = File.ReadAllText(@"d:\jsonSender.js");
+                    responseString = File.ReadAllText(@"C:\Users\Дарья\Desktop\git\Dasha\System Programming\jsonSender.js");
                 }
                 else
                 {
@@ -203,8 +203,6 @@ namespace Authentication
         {
 
             MainLoop();
-
-
 
 
 

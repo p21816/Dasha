@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525" FontSize="20">
     <DockPanel>
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+        <StackPanel Background="Khaki"  Orientation="Horizontal" DockPanel.Dock="Top">
             <Button  Content="Фибоначи в фоне" Click="Button_Click"/>
             <Button Content="счётчики" Click="Button_Click_1" ></Button>
         </StackPanel>

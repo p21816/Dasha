@@ -1,0 +1,18 @@
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\ConsoleUI\bin\Debug\ConsoleUI.exe.config
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\ConsoleUI\bin\Debug\ConsoleUI.exe
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\ConsoleUI\bin\Debug\ConsoleUI.pdb
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\ConsoleUI\bin\Debug\MergeSort.dll
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\ConsoleUI\bin\Debug\MergeSort.pdb
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\ConsoleUI\obj\Debug\ConsoleUI.exe
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\ConsoleUI\obj\Debug\ConsoleUI.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\ConsoleUI\bin\Debug\ConsoleUI.exe.config
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\ConsoleUI\bin\Debug\ConsoleUI.exe
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\ConsoleUI\bin\Debug\ConsoleUI.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\ConsoleUI\bin\Debug\MergeSort.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\ConsoleUI\bin\Debug\QuickSort.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\ConsoleUI\bin\Debug\MergeSort.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\ConsoleUI\bin\Debug\QuickSort.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\ConsoleUI\obj\Debug\ConsoleUI.exe
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\ConsoleUI\obj\Debug\ConsoleUI.pdb

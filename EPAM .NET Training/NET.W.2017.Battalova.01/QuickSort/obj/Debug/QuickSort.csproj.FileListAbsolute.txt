@@ -1,0 +1,9 @@
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\QuickSort\bin\Debug\QuickSort.dll
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\QuickSort\bin\Debug\QuickSort.pdb
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\QuickSort\obj\Debug\QuickSort.dll
+c:\users\дарья\documents\visual studio 2013\Projects\MergeSort\QuickSort\obj\Debug\QuickSort.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\QuickSort\bin\Debug\QuickSort.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\QuickSort\bin\Debug\QuickSort.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\QuickSort\obj\Debug\QuickSort.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\QuickSort\obj\Debug\QuickSort.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM Training\NET.W.2017.Battalova.01\QuickSort\obj\Debug\QuickSort.csprojResolveAssemblyReference.cache
