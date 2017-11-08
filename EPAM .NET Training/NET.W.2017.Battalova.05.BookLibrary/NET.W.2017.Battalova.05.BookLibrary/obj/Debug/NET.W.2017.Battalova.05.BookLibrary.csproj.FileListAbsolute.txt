@@ -1,0 +1,6 @@
+c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.05.BookLibrary\NET.W.2017.Battalova.05.BookLibrary\bin\Debug\NET.W.2017.Battalova.05.BookLibrary.exe.config
+c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.05.BookLibrary\NET.W.2017.Battalova.05.BookLibrary\bin\Debug\NET.W.2017.Battalova.05.BookLibrary.exe
+c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.05.BookLibrary\NET.W.2017.Battalova.05.BookLibrary\bin\Debug\NET.W.2017.Battalova.05.BookLibrary.pdb
+c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.05.BookLibrary\NET.W.2017.Battalova.05.BookLibrary\obj\Debug\NET.W.2017.Battalova.05.BookLibrary.csprojResolveAssemblyReference.cache
+c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.05.BookLibrary\NET.W.2017.Battalova.05.BookLibrary\obj\Debug\NET.W.2017.Battalova.05.BookLibrary.exe
+c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.05.BookLibrary\NET.W.2017.Battalova.05.BookLibrary\obj\Debug\NET.W.2017.Battalova.05.BookLibrary.pdb

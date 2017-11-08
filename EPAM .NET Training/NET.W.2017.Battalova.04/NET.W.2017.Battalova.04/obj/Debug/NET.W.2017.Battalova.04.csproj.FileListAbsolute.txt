@@ -5,3 +5,9 @@ c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.0
 c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.04\NET.W.2017.Battalova.04\bin\Debug\nunit.framework.dll
 c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.04\NET.W.2017.Battalova.04\bin\Debug\nunit.framework.xml
 c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.04\NET.W.2017.Battalova.04\bin\Debug\NET.W.2017.Battalova.04.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\NET.W.2017.Battalova.04\obj\Debug\NET.W.2017.Battalova.04.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\NET.W.2017.Battalova.04\obj\Debug\NET.W.2017.Battalova.04.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\NET.W.2017.Battalova.04\obj\Debug\NET.W.2017.Battalova.04.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\NET.W.2017.Battalova.04\bin\Debug\NET.W.2017.Battalova.04.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\NET.W.2017.Battalova.04\bin\Debug\NET.W.2017.Battalova.04.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\NET.W.2017.Battalova.04\bin\Debug\nunit.framework.xml
