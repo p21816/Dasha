@@ -1,5 +1,0 @@
-C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\MatrixTest\bin\Debug\MatrixTest.dll
-C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\MatrixTest\bin\Debug\MatrixTest.pdb
-C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\MatrixTest\obj\Debug\MatrixTest.csprojResolveAssemblyReference.cache
-C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\MatrixTest\obj\Debug\MatrixTest.dll
-C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.04\MatrixTest\obj\Debug\MatrixTest.pdb
