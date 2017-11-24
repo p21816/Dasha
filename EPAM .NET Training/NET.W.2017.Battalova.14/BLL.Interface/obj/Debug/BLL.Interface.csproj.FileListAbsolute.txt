@@ -1,0 +1,12 @@
+C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Interface\bin\Debug\BLL.Interface.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Interface\bin\Debug\BLL.Interface.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Interface\obj\Debug\BLL.Interface.csproj.CoreCompileInputs.cache
+C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Interface\obj\Debug\BLL.Interface.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Interface\obj\Debug\BLL.Interface.pdb
+C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\bin\Debug\BLL.Interface.dll
+C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\bin\Debug\BLL.Interface.pdb
+C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\obj\Debug\BLL.Interface.dll
+C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\obj\Debug\BLL.Interface.pdb
+C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\bin\Debug\Ninject.dll
+C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\bin\Debug\Ninject.xml
+C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\obj\Debug\BLL.Interface.csprojResolveAssemblyReference.cache
