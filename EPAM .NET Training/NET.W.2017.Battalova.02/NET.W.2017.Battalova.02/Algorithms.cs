@@ -9,6 +9,15 @@ namespace NET.W._2017.Battalova._02
     public static class Algorithms
     {
         #region IntegerInsertion
+
+        /// <summary>
+        /// inserts bits of one number to bits of another number from inde start to index end
+        /// </summary>
+        /// <param name="firstNumber">number from which we insert</param>
+        /// <param name="secondNumber">number to which we insert</param>
+        /// <param name="start">the bit we at which we start insertion</param>
+        /// <param name="end">the bit at which we end insertion</param>
+        /// <returns>a new number with the bits of first number inserted to the second number</returns>
         public static int IntegerInsertion(int firstNumber, int secondNumber, int start, int end)
         {
             const int maxBinIndex = 32;
@@ -23,12 +32,12 @@ namespace NET.W._2017.Battalova._02
             return (firstNumber & mask1) | (secondNumber & mask2);
         }
 
-        public static string ToBin(int value)
+        private static string ToBin(int value)
         {
             return BinaryRepresentation(value, 32);
         }
 
-        static string BinaryRepresentation(int value, int len)
+        private static string BinaryRepresentation(int value, int len)
         {
             return (len > 1 ? BinaryRepresentation(value >> 1, len - 1) : null) + "01"[value & 1];
         }
@@ -37,64 +46,90 @@ namespace NET.W._2017.Battalova._02
 
 
 #region NextBiggerNumber
-        static DateTime OperationBeginning()
+
+        /// <summary>
+        /// finds the next bigger number consisting of the same digits
+        /// </summary>
+        /// <param name="number">number from which to search tne next bigger number</param>
+        /// <returns>the next bigger number</returns>
+        public static int FindNextBiggerNumber(int number)
         {
-            DateTime operationBeginning = DateTime.Now;
-            return operationBeginning;
-        }
-        static DateTime OperationEnding()
-        {
-            DateTime operationEnding = DateTime.Now;
-            return operationEnding;
-        }
-        static TimeSpan OperationTotalTime(DateTime start, DateTime end)
-        {
-            return end - start;
+            int[] digits = MakeArrayFromNumber(number);
+            int indexOfFirstElementToSwap = IndexOfFirstElementToSwap(digits);
+            int indexOfSecondElementToSwap = IndexOfSecondElementToSwap(digits);
+            if (indexOfFirstElementToSwap == indexOfSecondElementToSwap) return -1;
+            Swap(ref digits, indexOfFirstElementToSwap, indexOfSecondElementToSwap);
+            int result = MakeNumberFromArray(digits);
+            return result;
         }
 
+        #region private methods for FindNextBiggerNumber
 
-        public static int NextBiggerNumber(int number)
+        private static int[] MakeArrayFromNumber(int number)
         {
-            DateTime start = OperationBeginning();
-            if (number < 0) throw new ArgumentException("Number is negative!");
-
-            List<int> digs = new List<int>();
+            int[] digits = new int[number.ToString().Length];
+            int i = 0;
             while (number > 0)
             {
-                digs.Add(number % 10);
+                digits[i] = number % 10;
                 number = number / 10;
+                i++;
             }
-            digs.Reverse();
-            int[] digits = digs.ToArray<int>();
+            return digits;
+        }
 
-            for (int i = digits.Length - 1; i > 0; i--)
+        private static int IndexOfFirstElementToSwap(int[] digits)
+        {
+            int temp = 0;
+            for (int i = 0; i < digits.Length - 1; i++)
             {
-                if (digits[i] > digits[i - 1])
+                if (digits[i + 1] < digits[i])
                 {
-                    int temp = digits[i];
-                    digits[i] = digits[i - 1];
-                    digits[i - 1] = temp;
-
-                    Array.Sort(digits, i, digits.Length - (i));
-                    string result = "";
-
-                    foreach (int j in digits)
-                    {
-                        result += j;
-                    }
-
-                    int res = Convert.ToInt32(result);
-                    DateTime end = OperationEnding();
-                    OperationTotalTime(start, end);
-                    return res;
+                    temp = i + 1;
+                    break;
                 }
             }
-            return -1;
+            return temp;
+        }
+
+
+        private static int IndexOfSecondElementToSwap(int[] digits)
+        {
+            int indexOfElementToChange = IndexOfFirstElementToSwap(digits);
+            int temp = 0;
+            for (int i = 0; i < digits[indexOfElementToChange]; i++)
+            {
+                if (digits[i] > digits[indexOfElementToChange])
+                {
+                    temp = i;
+                    break;
+                }
+            }
+            return temp;
+        }
+
+        private static void Swap(ref int[] digits, int indexOfFirstElementToSwap, int indexOfSecondElementToSwap)
+        {
+            int temp = digits[indexOfFirstElementToSwap];
+            digits[indexOfFirstElementToSwap] = digits[indexOfSecondElementToSwap];
+            digits[indexOfSecondElementToSwap] = temp;
+        }
+
+        private static int MakeNumberFromArray(int[] digits)
+        {
+            Array.Reverse(digits);
+            string result = "";
+            for (int i = 0; i < digits.Length; i++)
+            {
+                result += digits[i].ToString();
+            }
+            int res = Convert.ToInt32(result);
+            return res;
         }
 
 #endregion
 
-
+#endregion
         public static int[] FilterDigit(int[] digits, int number)
         {
             int temp;
@@ -107,7 +142,7 @@ namespace NET.W._2017.Battalova._02
                 {
                     temp = digits[i] % 10;
                     digits[i] = digits[i] / 10;
-                    if (temp == 7)
+                    if (temp == number)
                     {
                         digs.Add(tempNumber);
                         break;

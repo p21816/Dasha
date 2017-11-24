@@ -2,3 +2,17 @@ c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.0
 c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\NET.W.2017.Battalova.02.pdb
 c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\obj\Debug\NET.W.2017.Battalova.02.dll
 c:\users\дарья\documents\visual studio 2013\Projects\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\obj\Debug\NET.W.2017.Battalova.02.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\NET.W.2017.Battalova.02.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\NET.W.2017.Battalova.02.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\obj\Debug\NET.W.2017.Battalova.02.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\obj\Debug\NET.W.2017.Battalova.02.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\obj\Debug\NET.W.2017.Battalova.02.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\nunit.engine.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\nunit.engine.api.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\Mono.Cecil.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\Mono.Cecil.Rocks.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\nunit.framework.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.02\NET.W.2017.Battalova.02\bin\Debug\nunit.framework.xml
