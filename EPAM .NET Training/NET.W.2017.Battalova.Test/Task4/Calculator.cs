@@ -1,38 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Task4.Solution;
 
 namespace Task4
 {
     public class Calculator
     {
-        public double CalculateAverage(List<double> values, AveragingMethod averagingMethod)
+        public double CalculateAverage(List<double> values, ICalculate calculator)
         {
             if (values == null)
             {
-                throw  new ArgumentNullException(nameof(values));
+                throw  new ArgumentNullException();
             }
-
-            switch (averagingMethod)
-            {
-                case AveragingMethod.Mean:
-                    return values.Sum() / values.Count;
-
-                case AveragingMethod.Median:
-                    var sortedValues = values.OrderBy(x => x).ToList();
-
-                    int n = sortedValues.Count;
-
-                    if (n % 2 == 1)
-                    {
-                        return sortedValues[(n - 1) / 2];
-                    }
-
-                    return (sortedValues[sortedValues.Count / 2 - 1] + sortedValues[n / 2]) / 2;
-
-                default:
-                    throw new ArgumentException("Invalid averagingMethod value");
-            }
+            return calculator.Calculate(values);
         }
     }
 }

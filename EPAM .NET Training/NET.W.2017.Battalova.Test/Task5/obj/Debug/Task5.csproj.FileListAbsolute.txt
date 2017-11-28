@@ -12,3 +12,6 @@ C:\Users\MIB\Desktop\23.11.2017\Task5\obj\Debug\Task5.csprojResolveAssemblyRefer
 C:\Users\MIB\Desktop\23.11.2017\Task5\obj\Debug\Task5.csproj.CoreCompileInputs.cache
 C:\Users\MIB\Desktop\23.11.2017\Task5\obj\Debug\Task5.dll
 C:\Users\MIB\Desktop\23.11.2017\Task5\obj\Debug\Task5.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task5\obj\Debug\Task5.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task5\obj\Debug\Task5.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task5\obj\Debug\Task5.pdb

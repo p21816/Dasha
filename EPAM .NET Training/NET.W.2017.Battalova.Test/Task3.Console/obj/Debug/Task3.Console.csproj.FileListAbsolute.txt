@@ -4,3 +4,8 @@ C:\Users\MIB\Desktop\23.11.2017\Task3.Console\bin\Debug\Task3.Console.pdb
 C:\Users\MIB\Desktop\23.11.2017\Task3.Console\obj\Debug\Task3.Console.csproj.CoreCompileInputs.cache
 C:\Users\MIB\Desktop\23.11.2017\Task3.Console\obj\Debug\Task3.Console.exe
 C:\Users\MIB\Desktop\23.11.2017\Task3.Console\obj\Debug\Task3.Console.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task3.Console\bin\Debug\Task3.Console.exe.config
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task3.Console\bin\Debug\Task3.Console.exe
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task3.Console\bin\Debug\Task3.Console.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task3.Console\obj\Debug\Task3.Console.exe
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task3.Console\obj\Debug\Task3.Console.pdb

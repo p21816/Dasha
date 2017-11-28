@@ -1,3 +1,4 @@
 C:\Users\MIB\Desktop\23.11.2017\Task2.Tests\obj\Debug\Task2.Console.csprojResolveAssemblyReference.cache
 C:\Users\MIB\Desktop\23.11.2017\Task2.Tests\obj\Debug\Task2.Console.csproj.CoreCompileInputs.cache
 C:\Users\MIB\Desktop\23.11.2017\Task2.Tests\obj\Debug\Task2.Tests.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\obj\Debug\Task2.Console.csprojResolveAssemblyReference.cache

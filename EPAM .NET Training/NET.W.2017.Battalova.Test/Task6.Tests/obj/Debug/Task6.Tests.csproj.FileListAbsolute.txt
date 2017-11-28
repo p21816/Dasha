@@ -8,3 +8,12 @@ C:\Users\MIB\Desktop\23.11.2017\Task6.Tests\obj\Debug\Task6.Tests.dll
 C:\Users\MIB\Desktop\23.11.2017\Task6.Tests\obj\Debug\Task6.Tests.pdb
 C:\Users\MIB\Desktop\23.11.2017\Task6.Tests\bin\Debug\Test6.Solution.dll
 C:\Users\MIB\Desktop\23.11.2017\Task6.Tests\bin\Debug\Test6.Solution.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task6.Tests\bin\Debug\Task6.Tests.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task6.Tests\bin\Debug\Task6.Tests.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task6.Tests\bin\Debug\nunit.framework.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task6.Tests\bin\Debug\Test6.Solution.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task6.Tests\bin\Debug\Test6.Solution.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task6.Tests\bin\Debug\nunit.framework.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task6.Tests\obj\Debug\Task6.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task6.Tests\obj\Debug\Task6.Tests.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task6.Tests\obj\Debug\Task6.Tests.pdb
