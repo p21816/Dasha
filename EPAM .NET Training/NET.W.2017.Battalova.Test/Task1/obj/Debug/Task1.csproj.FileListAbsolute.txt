@@ -1,0 +1,19 @@
+C:\Users\MIB\Desktop\20.11.2017\Task1\bin\Debug\Task1.dll
+C:\Users\MIB\Desktop\20.11.2017\Task1\bin\Debug\Task1.pdb
+C:\Users\MIB\Desktop\20.11.2017\Task1\obj\Debug\Task1.csprojResolveAssemblyReference.cache
+C:\Users\MIB\Desktop\20.11.2017\Task1\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+C:\Users\MIB\Desktop\20.11.2017\Task1\obj\Debug\Task1.dll
+C:\Users\MIB\Desktop\20.11.2017\Task1\obj\Debug\Task1.pdb
+C:\Users\MIB\Desktop\23.11.2017\Task1\bin\Debug\Task1.dll
+C:\Users\MIB\Desktop\23.11.2017\Task1\bin\Debug\Task1.pdb
+C:\Users\MIB\Desktop\23.11.2017\Task1\obj\Debug\Task1.csprojResolveAssemblyReference.cache
+C:\Users\MIB\Desktop\23.11.2017\Task1\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+C:\Users\MIB\Desktop\23.11.2017\Task1\obj\Debug\Task1.dll
+C:\Users\MIB\Desktop\23.11.2017\Task1\obj\Debug\Task1.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task1\bin\Debug\Task1.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task1\bin\Debug\Task1.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task1\obj\Debug\Task1.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task1\obj\Debug\Task1.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task1\obj\Debug\Task1.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task1\bin\Debug\Task1.Solution.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task1\bin\Debug\Task1.Solution.pdb

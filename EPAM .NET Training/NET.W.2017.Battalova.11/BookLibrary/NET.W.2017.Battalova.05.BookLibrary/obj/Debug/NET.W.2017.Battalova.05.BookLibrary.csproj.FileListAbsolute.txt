@@ -30,3 +30,6 @@ C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\day 11\BookLibrary\NET.
 C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\day 11\BookLibrary\NET.W.2017.Battalova.05.BookLibrary\bin\Debug\StyleCop.dll
 C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\day 11\BookLibrary\NET.W.2017.Battalova.05.BookLibrary\bin\Debug\NLog.xml
 C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\day 11\BookLibrary\NET.W.2017.Battalova.05.BookLibrary\bin\Debug\StyleCop.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.11\BookLibrary\NET.W.2017.Battalova.05.BookLibrary\bin\Debug\NET.W.2017.Battalova.05.BookLibrary.exe.config
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.11\BookLibrary\NET.W.2017.Battalova.05.BookLibrary\obj\Debug\NET.W.2017.Battalova.05.BookLibrary.exe
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.11\BookLibrary\NET.W.2017.Battalova.05.BookLibrary\obj\Debug\NET.W.2017.Battalova.05.BookLibrary.pdb
