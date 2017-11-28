@@ -8,31 +8,52 @@ namespace Task1.Solution
 {
     public class PasswordChecker: IChecker
     {
-        public bool IsValid(string password)
+        public bool IsNotNull(string password)
         {
             if (password == null)
                 return false;
-            if (password == string.Empty)
-                return false;
 
+            return true;
+        }
+
+        public bool IsValidLength(int Length)
+        {
             // check if length more than 7 chars 
-            if (password.Length <= 7)
+            if (Length <= 7 || Length >= 15)
+            {
                 return false;
+            }
+            return true;
+        }
 
-            // check if length more than 10 chars for admins
-            if (password.Length >= 15)
+        public bool isNotEmpty(string password)
+        {
+            if (password == string.Empty)
+            {
                 return false;
+            }
+            return true;
+        }
 
+        bool IsLetter(string password)
+        {
             // check if password conatins at least one alphabetical character 
             if (!password.Any(char.IsLetter))
+            {
                 return false;
+            }
+            return true;
+        }
 
+        public bool IsNumber(string password)
+        {
             // check if password conatins at least one digit character 
             if (!password.Any(char.IsNumber))
                 return false;
 
             return true;
         }
+
     }
 }
 

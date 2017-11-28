@@ -8,6 +8,10 @@ namespace Task1.Solution
 {
     public interface IChecker
     {
-        bool IsValid(string password);
+        bool isNotEmpty(string password);
+        bool IsNotNull(string password);
+        bool IsValidLength(int Length);
+        bool IsLetter(string password);
+        bool IsNumber(string password);
     }
 }
