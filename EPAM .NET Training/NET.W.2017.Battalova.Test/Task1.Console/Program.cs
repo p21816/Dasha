@@ -12,7 +12,10 @@ namespace Task1.Console
         static void Main(string[] args)
         {
             PasswordCheckerService checker = new PasswordCheckerService();
-            System.Console.WriteLine(checker.VerifyPassword(new SqlRepository(), new PasswordChecker(), "12345"));
+            IChecker [] checkers = {new PasswordIsNullChecker() ,
+                                       new PasswordIsEmptyChecker(),
+                                       new PasswordLengthChecker() , new PasswordIsNumberChecker()};
+            System.Console.WriteLine(checker.VerifyPassword(new SqlRepository(), checkers, "12345"));
         }
     }
 }

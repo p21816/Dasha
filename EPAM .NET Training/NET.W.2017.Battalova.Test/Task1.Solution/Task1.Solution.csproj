@@ -43,7 +43,10 @@
   <ItemGroup>
     <Compile Include="IChecker.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="PasswordChecker.cs" />
+    <Compile Include="PasswordIsEmptyChecker.cs" />
+    <Compile Include="PasswordIsNullChecker.cs" />
+    <Compile Include="PasswordIsNumberChecker.cs" />
+    <Compile Include="PasswordLengthChecker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
