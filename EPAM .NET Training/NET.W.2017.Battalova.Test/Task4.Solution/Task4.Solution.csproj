@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculator.cs" />
     <Compile Include="ICalculate.cs" />
     <Compile Include="MeanCalculator.cs" />
     <Compile Include="MedianCalculator.cs" />

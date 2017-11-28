@@ -2,3 +2,19 @@ C:\Users\MIB\Desktop\23.11.2017\Task2.Tests\obj\Debug\Task2.Console.csprojResolv
 C:\Users\MIB\Desktop\23.11.2017\Task2.Tests\obj\Debug\Task2.Console.csproj.CoreCompileInputs.cache
 C:\Users\MIB\Desktop\23.11.2017\Task2.Tests\obj\Debug\Task2.Tests.pdb
 C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\obj\Debug\Task2.Console.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Task2.Tests.exe.config
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Task2.Tests.exe
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Task2.Tests.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Castle.Core.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Moq.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\nunit.framework.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Task2.Solution.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Task2.Solution.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Castle.Core.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Moq.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Moq.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\nunit.framework.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\obj\Debug\Task2.Tests.exe
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\obj\Debug\Task2.Tests.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Task 2.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2.Tests\bin\Debug\Task 2.pdb

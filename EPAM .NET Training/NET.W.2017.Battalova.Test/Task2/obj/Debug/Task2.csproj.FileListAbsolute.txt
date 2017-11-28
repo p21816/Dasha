@@ -10,3 +10,6 @@ C:\Users\MIB\Desktop\23.11.2017\Task 2\obj\Debug\Task 2.dll
 C:\Users\MIB\Desktop\23.11.2017\Task 2\obj\Debug\Task 2.pdb
 C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2\obj\Debug\Task 2.dll
 C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2\obj\Debug\Task 2.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2\bin\Debug\Task 2.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2\bin\Debug\Task 2.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.Test\Task2\obj\Debug\Task2.csprojResolveAssemblyReference.cache
