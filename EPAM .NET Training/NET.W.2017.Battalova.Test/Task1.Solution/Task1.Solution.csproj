@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IChecker.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="PasswordCheckerService.cs" />
     <Compile Include="PasswordIsEmptyChecker.cs" />
     <Compile Include="PasswordIsNullChecker.cs" />
     <Compile Include="PasswordIsNumberChecker.cs" />
