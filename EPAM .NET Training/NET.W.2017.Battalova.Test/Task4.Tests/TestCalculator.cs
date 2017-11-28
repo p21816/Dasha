@@ -24,6 +24,19 @@ namespace Task4.Tests
         }
 
         [Test]
+        public void Test_AverageByMean_ByDelegate()
+        {
+            Calculator calculator = new Calculator();
+            MeanCalculator mean = new MeanCalculator();
+
+            double expected = 8.3636363;
+
+            double actual = calculator.CalculateAverage(values, mean.Calculate);
+
+            Assert.AreEqual(expected, actual, 0.000001);
+        }
+
+        [Test]
         public void Test_AverageByMedian()
         {
             Calculator calculator = new Calculator();
@@ -31,6 +44,19 @@ namespace Task4.Tests
             double expected = 8.0;
 
             double actual = calculator.CalculateAverage(values, new MedianCalculator());
+
+            Assert.AreEqual(expected, actual, 0.000001);
+        }
+
+        [Test]
+        public void Test_AverageByMedian_ByDelegate()
+        {
+            Calculator calculator = new Calculator();
+            MedianCalculator median = new MedianCalculator();
+
+            double expected = 8.0;
+
+            double actual = calculator.CalculateAverage(values, median.Calculate);
 
             Assert.AreEqual(expected, actual, 0.000001);
         }

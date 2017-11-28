@@ -15,5 +15,14 @@ namespace Task4
             }
             return calculator.Calculate(values);
         }
+
+        public double CalculateAverage(List<double> values, Func<List<double>, double> calculate)
+        {
+            if (values == null)
+            {
+                throw new ArgumentNullException();
+            }
+            return calculate(values);
+        }
     }
 }

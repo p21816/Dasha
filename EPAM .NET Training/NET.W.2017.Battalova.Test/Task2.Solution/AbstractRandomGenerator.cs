@@ -29,7 +29,7 @@ namespace Task2.Solution
                 Directory.CreateDirectory(WorkingDirectory);
             }
 
-            File.WriteAllBytes("{WorkingDirectory}//{fileName}", content);
+            File.WriteAllBytes(WorkingDirectory+"//"+fileName, content);
         }
         public abstract byte[] GenerateFileContent(int contentLength);
     }
