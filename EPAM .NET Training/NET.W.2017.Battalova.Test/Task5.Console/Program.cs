@@ -3,12 +3,13 @@
     using System.Collections.Generic;
     using System;
     using Task5;
+    using Task5.Solution;
 
     class Program
     {
         static void Main(string[] args)
         {
-            List<DocumentPart> parts = new List<DocumentPart>
+            List<AbstractDocumentPart> parts = new List<AbstractDocumentPart>
                 {
                     new PlainText {Text = "Some plain text"},
                     new Hyperlink {Text = "google.com", Url = "https://www.google.by/"},
@@ -17,11 +18,9 @@
 
             Document document = new Document(parts);
 
-            Console.WriteLine(document.ToHtml());
-
-            Console.WriteLine(document.ToPlainText());
-
-            Console.WriteLine(document.ToLaTeX());
+            Console.WriteLine(document.Convert(new HtmlConverter()));
+            Console.WriteLine(document.Convert(new LaTeXConverter()));
+            Console.WriteLine(document.Convert(new PlainTextConverter()));
         }
     }
 }
