@@ -6,6 +6,8 @@ using DependencyResolver;
 using Ninject;
 using BLL.ServiceImplementation;
 using DAL.Fake;
+using DAL.Fake.Repositories;
+using DAL.Interface.Interfaces;
 
 namespace ConsolePL
 {
@@ -26,8 +28,8 @@ namespace ConsolePL
             Account account = accountService.CreateNewAccount("Darya Battalova", 100, 1 , "basic");
             accountService.AddMoney(account, 200);
             accountService.WithdrawMoney(account, 150);
-            accountRepository.Save(account);
-            accountRepository.DeleteAccount(account);
+            accountRepository.AddAccount(account);
+            accountRepository.RemoveAccount(account);
         }
     }
 }

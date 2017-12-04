@@ -1,57 +1,52 @@
-﻿using System;
+﻿using DAL.Interface.DTO;
+using DAL.Interface.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BLL.Interface.Entities;
-using BLL.Interface.Interfaces;
 
-namespace DAL.Fake
+namespace DAL.Fake.Repositories
 {
-    public class ListAccountRepository : IAccountRepository
+    public class ListAccountRepository: IAccountRepository
     {
-        List<Account> storage = new List<Account>();
-
-        /// <summary>
-        /// deletes account from a repository
-        /// </summary>
-        /// <param name="account">account to delete</param>
-        public void DeleteAccount(Account account)
+        private List<AccountDTO> storage = new List<AccountDTO>();
+        public AccountDTO GetAccount(string accountNumber)
         {
-            if(!(storage.Contains(account)))
+            if (accountNumber == null) throw new ArgumentNullException();
+            foreach(var i in storage )
             {
-                throw new ArgumentException();
+                if (i.AccountNumber == accountNumber) return i;
             }
-            storage.Remove(account);
+            return null;
         }
 
-        /// <summary>
-        /// finds account in a repository by id
-        /// </summary>
-        /// <param name="id">id of an account to find</param>
-        /// <returns>found account</returns>
-        public Account FindById(int id)
+        public void SaveAccount(AccountDTO account)
         {
-            try
-            {
-                return storage.ElementAt(id);
-            }
-            catch(ArgumentOutOfRangeException e)
-            {
-                return null;
-            }
-        }
+            if (account == null) throw new ArgumentNullException();
 
-
-        /// <summary>
-        /// saves account
-        /// </summary>
-        /// <param name="account">account to save to repository</param>
-        public void Save(Account account)
-        {
+            storage.RemoveAll(dalAccount => dalAccount.AccountNumber == account.AccountNumber);
             storage.Add(account);
-            int id = storage.IndexOf(account);
-            account.Id = id;
+        }
+
+        public void AddAccount(AccountDTO account)
+        {
+            if (account == null) throw new ArgumentNullException();
+            if (storage.Contains(account)) throw new ArgumentException();
+            storage.Add(account);
+        }
+
+        public void RemoveAccount(AccountDTO account)
+        {
+            if (account == null) throw new ArgumentNullException();
+            if (!storage.Contains(account)) throw new ArgumentException();
+            storage.Remove(account);
+
+        }
+
+        public IEnumerable<AccountDTO> GetAllAccounts()
+        {
+           return new List<AccountDTO>(storage);
         }
     }
 }
