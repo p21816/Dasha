@@ -8,7 +8,10 @@ namespace BLL.Interface.Interfaces
 {
     public interface IBonusCalculator
     {
-        int CalculateBinusOnAdd(decimal value);
-        int CalculateBinusOnWithdraw(decimal value);
+        int GetPercentOf(decimal value, int percent);
+         int CalculateBinusOnWithdraw(decimal value);
+    
+         int CalculateBinusOnAdd(decimal value);
+   
     }
 }

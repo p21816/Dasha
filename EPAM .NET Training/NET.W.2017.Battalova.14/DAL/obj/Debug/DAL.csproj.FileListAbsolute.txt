@@ -19,3 +19,19 @@ C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL\obj\Debug\DAL.dll
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL\obj\Debug\DAL.pdb
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL\bin\Debug\Ninject.dll
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL\bin\Debug\Ninject.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\DAL.dll.config
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\DAL.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\DAL.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\DAL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\Ninject.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\System.ValueTuple.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\DAL.Interface.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\Ninject.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\bin\Debug\System.ValueTuple.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\obj\Debug\DAL.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL\obj\Debug\DAL.pdb

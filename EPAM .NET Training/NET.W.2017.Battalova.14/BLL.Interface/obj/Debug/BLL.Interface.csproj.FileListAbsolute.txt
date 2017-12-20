@@ -10,3 +10,15 @@ C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\obj\Debug\BLL.I
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\bin\Debug\Ninject.dll
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\bin\Debug\Ninject.xml
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\BLL.Interface\obj\Debug\BLL.Interface.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\bin\Debug\BLL.Interface.dll.config
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\bin\Debug\BLL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\bin\Debug\BLL.Interface.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\bin\Debug\EntityFramework.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\bin\Debug\Ninject.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\bin\Debug\EntityFramework.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\bin\Debug\Ninject.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\obj\Debug\BLL.Interface.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\obj\Debug\BLL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Interface\obj\Debug\BLL.Interface.pdb

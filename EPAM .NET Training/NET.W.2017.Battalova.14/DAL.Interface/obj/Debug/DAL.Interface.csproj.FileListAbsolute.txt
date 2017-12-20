@@ -10,3 +10,14 @@ C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL.Interface\obj\Debug\DAL.I
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL.Interface\obj\Debug\DAL.Interface.pdb
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL.Interface\bin\Debug\Ninject.dll
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL.Interface\bin\Debug\Ninject.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\bin\Debug\DAL.Interface.dll.config
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\bin\Debug\DAL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\bin\Debug\DAL.Interface.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\bin\Debug\EntityFramework.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\bin\Debug\Ninject.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\bin\Debug\EntityFramework.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\bin\Debug\Ninject.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\obj\Debug\DAL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Interface\obj\Debug\DAL.Interface.pdb

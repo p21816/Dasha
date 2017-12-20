@@ -17,3 +17,19 @@ C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL.Fake\bin\Debug\Ninject.xm
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL.Fake\obj\Debug\DAL.Fake.csprojResolveAssemblyReference.cache
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL.Fake\obj\Debug\DAL.Fake.dll
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DAL.Fake\obj\Debug\DAL.Fake.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\DAL.Fake.dll.config
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\DAL.Fake.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\DAL.Fake.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\BLL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\DAL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\EntityFramework.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\Ninject.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\BLL.Interface.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\DAL.Interface.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\EntityFramework.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\bin\Debug\Ninject.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\obj\Debug\DAL.Fake.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\obj\Debug\DAL.Fake.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DAL.Fake\obj\Debug\DAL.Fake.pdb

@@ -31,3 +31,7 @@ C:\Users\Дарья\Desktop\epam\AccountSystemDemo\ConsolePL\bin\Debug\BLL.pdb
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\ConsolePL\obj\Debug\ConsolePL.csprojResolveAssemblyReference.cache
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\ConsolePL\obj\Debug\ConsolePL.exe
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\ConsolePL\obj\Debug\ConsolePL.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\ConsolePL\bin\Debug\ConsolePL.exe.config
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\ConsolePL\obj\Debug\ConsolePL.exe
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\ConsolePL\obj\Debug\ConsolePL.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\ConsolePL\obj\Debug\ConsolePL.csprojResolveAssemblyReference.cache

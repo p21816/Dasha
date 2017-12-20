@@ -1,0 +1,7 @@
+c:\users\дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL.Interface\obj\Debug\BLL.Interface.csprojResolveAssemblyReference.cache
+c:\users\дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL.Interface\bin\Debug\BLL.Interface.dll
+c:\users\дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL.Interface\bin\Debug\BLL.Interface.pdb
+c:\users\дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL.Interface\obj\Debug\BLL.Interface.dll
+c:\users\дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL.Interface\obj\Debug\BLL.Interface.pdb
+C:\Users\Дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL.Interface\bin\Debug\DAL.Interface.dll
+C:\Users\Дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL.Interface\bin\Debug\DAL.Interface.pdb

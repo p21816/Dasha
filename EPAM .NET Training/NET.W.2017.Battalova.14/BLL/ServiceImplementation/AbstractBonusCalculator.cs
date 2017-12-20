@@ -21,5 +21,15 @@ namespace BLL.ServiceImplementation
             int res = Convert.ToInt32(result);
             return res;
         }
+
+        public int CalculateBinusOnWithdraw(decimal value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int CalculateBinusOnAdd(decimal value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

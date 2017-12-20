@@ -17,3 +17,28 @@ C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Tests\obj\Debug\BLL.Tests.cspr
 C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Tests\obj\Debug\BLL.Tests.csproj.CoreCompileInputs.cache
 C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Tests\obj\Debug\BLL.Tests.dll
 C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Tests\obj\Debug\BLL.Tests.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\BLL.Tests.dll.config
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\BLL.Tests.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\BLL.Tests.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\BLL.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\BLL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\Castle.Core.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\DAL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\EntityFramework.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\Moq.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\Ninject.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\nunit.framework.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\BLL.Interface.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\BLL.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\DAL.Interface.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\Castle.Core.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\EntityFramework.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\Moq.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\Moq.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\Ninject.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\bin\Debug\nunit.framework.xml
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\obj\Debug\BLL.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\obj\Debug\BLL.Tests.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\BLL.Tests\obj\Debug\BLL.Tests.pdb

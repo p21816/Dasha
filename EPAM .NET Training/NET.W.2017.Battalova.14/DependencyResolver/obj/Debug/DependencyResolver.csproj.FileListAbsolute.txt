@@ -33,3 +33,5 @@ C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DependencyResolver\bin\Debug\
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DependencyResolver\obj\Debug\DependencyResolver.csprojResolveAssemblyReference.cache
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DependencyResolver\obj\Debug\DependencyResolver.dll
 C:\Users\Дарья\Desktop\epam\AccountSystemDemo\DependencyResolver\obj\Debug\DependencyResolver.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DependencyResolver\obj\Debug\DependencyResolver.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\NET.W.2017.Battalova.14\DependencyResolver\obj\Debug\DependencyResolver.dll
