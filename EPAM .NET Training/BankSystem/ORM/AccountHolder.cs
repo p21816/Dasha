@@ -9,6 +9,7 @@ namespace ORM
 {
     public class AccountHolder
     {
+        public virtual ICollection<Account> Accounts { get; set; }
         public AccountHolder()
         {
             Accounts = new HashSet<Account>();
@@ -16,11 +17,9 @@ namespace ORM
 
         public int Id { get; set; }
 
-        [Required]
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
-        public virtual ICollection<Account> Accounts { get; set; }
     }
 }

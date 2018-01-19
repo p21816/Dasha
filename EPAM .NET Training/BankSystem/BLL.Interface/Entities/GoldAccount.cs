@@ -9,8 +9,8 @@ namespace BLL.Interface.Entities
     public class GoldAccount: Account
     {
         public GoldAccount() { }
-        public GoldAccount(string accountNumber, AccountHolder accountHolder) :
-            base(accountNumber, accountHolder) 
+        public GoldAccount(int id, string accountNumber, AccountHolder accountHolder) :
+            base(id, accountNumber, accountHolder) 
         {
             this.Type = "gold";
         }

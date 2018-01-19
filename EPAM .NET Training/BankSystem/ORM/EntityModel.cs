@@ -22,6 +22,8 @@ namespace ORM
         {
             modelBuilder.Entity<AccountHolder>()
                 .HasMany(e => e.Accounts);
+
+         
         }
 
     }

@@ -43,6 +43,7 @@
     <Compile Include="Entities\AccountHolder.cs" />
     <Compile Include="Entities\BaseAccount.cs" />
     <Compile Include="Entities\GoldAccount.cs" />
+    <Compile Include="Entities\PlatinumAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IAccountService.cs" />
     <Compile Include="Services\IBonusCalculator.cs" />

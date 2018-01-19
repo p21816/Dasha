@@ -12,16 +12,16 @@ namespace BLL.Interface
     {
 
 #region Fields
-        protected int id;
-        protected string accountNumber;
-        protected AccountHolder accountHolder;
-        protected decimal balance;
-        protected int bonus;
-        protected string type;
+        private int id;
+        private string accountNumber;
+        private AccountHolder accountHolder;
+        private decimal balance;
+        private int bonus;
+        private string type;
 
 #endregion
 
-        #region Properties
+#region Properties
 
         public string Type
         {
@@ -59,11 +59,12 @@ namespace BLL.Interface
             set { bonus = value; }
         }
 
-        #endregion
+#endregion
 
         protected Account() { }
-        protected Account(string accountNumber, AccountHolder accountHolder)
+        protected Account(int id, string accountNumber, AccountHolder accountHolder)
         {
+            this.Id = id;
             this.accountNumber = accountNumber;
             this.accountHolder = accountHolder;
             this.balance = 0;

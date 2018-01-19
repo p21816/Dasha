@@ -10,15 +10,16 @@ namespace BLL.Interface.Entities
     public class BaseAccount: Account
     {
        public BaseAccount() { }
-       public BaseAccount(string accountNumber, AccountHolder accountHolder) :
-            base(accountNumber, accountHolder)
+       public BaseAccount(int id, string accountNumber, AccountHolder accountHolder) :
+            base(id, accountNumber, accountHolder)
        {
            this.Type = "base";
        }
 
        public void AddMoney(decimal sum, IBonusCalculator calculator)
        {
-           this.bonus += calculator.CalculateBonus(sum);
+           this.Balance += sum;
+           this.Bonus += calculator.CalculateBonus(sum);
        }
     }
 }

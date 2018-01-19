@@ -7,3 +7,12 @@ C:\Users\Дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL\obj\
 C:\Users\Дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL\obj\Debug\BLL.pdb
 C:\Users\Дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL\bin\Debug\DAL.Interface.dll
 C:\Users\Дарья\documents\visual studio 2013\Projects\BLL.Interface\BLL\bin\Debug\DAL.Interface.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\BankSystem\BLL\bin\Debug\BLL.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\BankSystem\BLL\bin\Debug\BLL.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\BankSystem\BLL\bin\Debug\BLL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\BankSystem\BLL\bin\Debug\DAL.Interface.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\BankSystem\BLL\bin\Debug\BLL.Interface.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\BankSystem\BLL\bin\Debug\DAL.Interface.pdb
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\BankSystem\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\BankSystem\BLL\obj\Debug\BLL.dll
+C:\Users\Дарья\Desktop\git\Dasha\EPAM .NET Training\BankSystem\BLL\obj\Debug\BLL.pdb

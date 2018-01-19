@@ -56,6 +56,10 @@
       <Project>{1918e590-d1dd-48b5-8f63-295f95dd8486}</Project>
       <Name>DAL.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ORM\ORM.csproj">
+      <Project>{5cb1b286-6ade-4e7e-8d7c-5dbac7d0b90c}</Project>
+      <Name>ORM</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

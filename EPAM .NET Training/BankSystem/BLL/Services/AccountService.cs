@@ -26,9 +26,9 @@ namespace BLL
             this.accountRepository = accountRepository;
         }
 
-        public Account GetAccount(int id)
+        public Account GetAccountById(int id)
         {
-            throw new NotImplementedException();
+            return accountRepository.GetById(id).ToBLLAccount();
         }
 
         public IEnumerable<Account> GetAllAccounts()
@@ -49,7 +49,7 @@ namespace BLL
 
         public void DeleteAccount(Account account)
         {
-            throw new NotImplementedException();
+            accountRepository.Delete(account.ToDalAccount());
         }
     }
 }

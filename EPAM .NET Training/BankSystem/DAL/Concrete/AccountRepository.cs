@@ -1,5 +1,6 @@
 ﻿using DAL.Interface;
 using DAL.Interface.Repository;
+using ORM;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,13 +12,13 @@ namespace DAL
 {
     public class AccountRepository : IAccountRepository
     {
-          private readonly DbContext context;
-        //public AccountRepository(DbContext uow)
-        //{
-        //    this.context = uow;
-        //}
+        private readonly DbContext context;
+        public AccountRepository(DbContext uow)
+        {
+            this.context = uow;
+        }
 
-        List<DalAccount> accounts = new List<DalAccount>();
+        List<DalAccount> accounts = new List<DalAccount>(); 
 
         public IEnumerable<DalAccount> GetAll()
         {
@@ -26,7 +27,18 @@ namespace DAL
 
         public DalAccount GetById(int key)
         {
-            throw new NotImplementedException();
+            try
+            {
+                foreach (var i in accounts)
+                {
+                    if (i.Id == key) return i;
+                }
+            }
+            catch (IndexOutOfRangeException e)
+            {
+
+            }
+            return null;
         }
 
         public DalAccount GetByPredicate(System.Linq.Expressions.Expression<Func<DalAccount, bool>> f)
@@ -34,14 +46,28 @@ namespace DAL
             throw new NotImplementedException();
         }
 
+        //public void Create(DalAccount e)
+        //{
+        //    accounts.Add(e);
+        //}
+
         public void Create(DalAccount e)
         {
-            accounts.Add(e);
+            var account = new Account()
+            {
+                Id = e.Id,
+                AccountNumber = e.AccountNumber,
+                AccountHolderId = e.AccountHolder.Id,
+                Type = e.Type,
+                Balance = e.Balance,
+                Bonus = e.Bonus
+            };
+            context.Set<Account>().Add(account);
         }
 
         public void Delete(DalAccount e)
         {
-            throw new NotImplementedException();
+            accounts.Remove(e);
         }
 
         public void Update(DalAccount entity)
